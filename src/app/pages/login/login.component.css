@@ -1,0 +1,55 @@
+
+/* ------- IMAGEN -------*/
+.wrap-imagen-col {
+    text-align: center;
+}
+
+.wrap-imagen {
+    margin: 0 auto;
+    width: 155px;
+    height: 105px ;
+}
+
+.img-poli {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* ------- TITULO -------*/
+
+.wrap-titulo-col {
+    text-align: center;
+}
+
+h1 {
+    color: #28A200;
+    font-size: 1.2rem;
+}
+
+/* ------- FORMULARIO -------*/
+
+.wrap-formulario-col {
+    text-align: center;
+}
+
+.wrap-formulario {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+h2 {
+    color: #17D700;
+    font-size: 15px;
+}
+
+.wrap-inputs {
+    margin: 0 auto;
+    width: 350px;
+}
+
+.input-login {
+    padding-top: 15px;
+    width: 205px;
+    height: 25px;
+}
