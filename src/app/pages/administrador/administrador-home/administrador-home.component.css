@@ -1,0 +1,38 @@
+
+.wrap-main {
+    width: 80%;
+}
+
+.wrap-imagen-col {
+    text-align: center;
+}
+
+.wrap-imagen {
+    margin: 0 auto;
+    width: 150px;
+    height: 0 auto;
+}
+
+.img-poli {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.wrap-opciones {
+    background-color: white;
+    text-align: center;
+    height: auto;
+    border: 1px solid #000000;
+}
+
+.wrap-opciones > div {
+    border-bottom: 1px solid #000000;
+    padding: 0 !important;
+}
+
+.wrap-opciones > div > a {
+    width: 100%;
+    color:  #000000;
+    text-decoration: none;
+}

@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AtletaHomeComponent implements OnInit {
 
+  name = 'LEO';
+  age = '19 AÑOS';
+  telefono = '33333444';
+
   constructor() { }
 
   ngOnInit() {
