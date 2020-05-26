@@ -2,15 +2,6 @@
     margin-top: 20px;
 }
 
-.wrapp-opciones-superiores {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.opciones-superiores {
-    margin: 0 15px;
-}
-
 .wrap-imagen {
     margin: 0 auto;
     width: 150px;
@@ -27,4 +18,21 @@
     padding-top: 15px;
     width: 205px;
     height: 25px;
+}
+
+
+/*------ FORM ------*/
+.content__wrapp-inputs {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.content__input {
+    width: 90%;
+    height: 25px;
+}
+
+.botones-envio {
+    display: flex;
+    justify-content: center;
 }

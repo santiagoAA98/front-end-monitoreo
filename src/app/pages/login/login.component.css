@@ -1,55 +1,64 @@
 
+.wrapp-main {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    width: 90%;
+    height: 90%;    
+}
+
 /* ------- IMAGEN -------*/
-.wrap-imagen-col {
-    text-align: center;
-}
-
-.wrap-imagen {
+.content__wrapp-img {
+    width: 12%;
     margin: 0 auto;
-    width: 155px;
-    height: 105px ;
 }
 
-.img-poli {
-    max-width: 100%;
-    max-height: 100%;
+.content__img {
+    width: 100%;
+    max-height: 0 auto;
 }
 
-/* ------- TITULO -------*/
-
-.wrap-titulo-col {
+/* ------- TITLE -------*/
+.content__wrapp-title {
     text-align: center;
 }
 
-h1 {
+.content__title {
+    font-size: 25px;
     color: #28A200;
-    font-size: 1.2rem;
 }
 
-/* ------- FORMULARIO -------*/
 
-.wrap-formulario-col {
+/* ------- FORM -------*/
+.content__wrapp-form {
+}
+
+.content__wrapp-indication {
     text-align: center;
 }
 
-.wrap-formulario {
-    margin: 0 auto;
-    width: 80%;
-    text-align: center;
-}
-
-h2 {
-    color: #17D700;
+.content__indication {
     font-size: 15px;
+    color: #17D700;
 }
 
-.wrap-inputs {
-    margin: 0 auto;
+.content__wrapp-inputs {
     width: 350px;
+    margin: 0 auto;
 }
 
-.input-login {
-    padding-top: 15px;
-    width: 205px;
+.content__input {
+    width: 90%;
     height: 25px;
 }
+
+.content__wrapp-submit {
+    text-align: center;
+}
+

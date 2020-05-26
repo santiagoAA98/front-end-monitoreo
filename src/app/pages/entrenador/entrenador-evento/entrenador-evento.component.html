@@ -1,19 +1,14 @@
-<div class="wrapp">
-    <div class="wrapp-opciones-superiores">
-        <div class="opciones-superiores">
-            <button type="button" class="btn btn-danger">ATRAS</button>
-        </div>
-        <div class="opciones-superiores">
-            <button type="button" class="btn btn-danger">EDITAR PERFIL</button>
-        </div>
-        <div class="opciones-superiores">
-            <button type="button" class="btn btn-danger">CERRAR SESION</button>
-        </div>
+<div class="container-fluid mt-3">
+    <div class="botones-navegacion">
+        <button type="button" class="btn btn-danger botones-navegacion__boton">ATRAS</button>
+        <button type="button" class="btn btn-danger botones-navegacion__boton">EDITAR PERFIL</button>
+        <button type="button" class="btn btn-danger botones-navegacion__boton">CERRAR SESION</button>
     </div>
+
 
     <div class="container mt-5">
         <div class="row">
-            <div class="col-6">
+            <div class="col-6 pt-5">
                 BIENVENIDO, LISS
                 <br><br>
                 ESTAS EN LA ZONA DE CREAR UN EVENTO
@@ -25,36 +20,56 @@
             </div>
         </div>
 
+
         <div class="row mt-5">
             <div class="col-6">
-                atletas
+                seleccionar atletas para el evento
             </div>
-
             <div class="col-6">
                 <form action="">
-                    <div class="mt-4">
-                        <div class="form-group row">
-                            <label for="inputUsuario" class="col-4">LUGAR DE EVENTO</label>
-                            <div class="col-8 mt-2">
-                              <input type="text" id="inputUsuario" class="input-login">
-                            </div>
-                        </div>
-    
-                        <div class="form-group row">
-                            <label for="inputClave" class="col-4">REQUISITOS PARA EVENTO</label>
-                            <div class="col-8 mt-2 ">
-                              <input type="password" id="inputClave" class="input-login">
-                            </div>
-                        </div>
+                    <div class="content__wrapp-inputs mt-4">
+                        <table style="width:100%">
+                            <tr>
+                              <td class="pb-3">
+                                  <label for="">LUGAR DEL EVENTO</label>
+                              </td>
+                              <td class="pb-3" >
+                                  <input type="text" name="" id="" class="content__input">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="pb-3">
+                                  <label for="">REQUISITOS PARA EVENTO</label>
+                              </td>
+                              <td class="pb-3">
+                                  <input type="text" name="" id="" class="content__input">
+                              </td>
+                            </tr>
+                            <tr>
+                                <td class="pb-3">
+                                    <label for="">FECHA DEL EVENTO</label>
+                                </td>
+                                <td class="pb-3">
+                                    <input type="date" name="" id="" class="content__input">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pb-3">
+                                    <label for="">HORA DEL EVENTO</label>
+                                </td>
+                                <td class="pb-3">
+                                    <input type="time" name="" id="" class="content__input">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="botones-envio mt-4">
+                        <button type="button" class="btn btn-light botones-navegacion__boton">CANCELAR</button>
+                        <button type="button" class="btn btn-light botones-navegacion__boton">GUARDAR</button>
                     </div>
                 </form>
             </div>
         </div>
-        
-
     </div>
-
-
-
-
 </div>

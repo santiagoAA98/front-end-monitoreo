@@ -1,26 +1,38 @@
 
+ .botones-navegacion {
+     display: flex;
+     justify-content: flex-end;
+ }
 
-/*------- IMAGENES -------*/
-.wrap-imagen {
-    width: 150px;
-    height: 0 auto;
-}
+ .botones-navegacion__boton {
+     margin-right: 10px;
+ }
 
-.img-poli {
-    max-width: 100%;
-    max-height: 100%;
-}
+ .bienvenida {
+     display: flex;
+ }
 
-.wrap-imagen {
-    margin: 0 auto;
-    width: 150px;
-    height: 0 auto;
-}
+ .bienvenida > div {
+     width: 30%;
+ }
 
+ .bienvenida__info {
+     padding: 2% 0 0 10%;
+ }
 
-.img-perfil {
-    max-width: 100%;
-    max-height: 100%;
+ .bienvenida__foto > img {
+    max-width: 150px;
+    max-height: 0 auto;
     border-radius: 150px;
+ }
+
+ /* ------- IMAGEN -------*/
+.content__wrapp-img {
+    width: 150px;
+    margin-left: 8%;
 }
 
+.content__img {
+    width: 100%;
+    max-height: 0 auto;
+}
