@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaAtletasComponent implements OnInit {
 
+  items = ['apple', 'orange'];
+
   constructor() { }
 
   ngOnInit() {
