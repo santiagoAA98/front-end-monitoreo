@@ -13,7 +13,7 @@
 
 
         <div class="content__wrapp-form">
-            <form action="">
+            <form (ngSubmit)="iniciarSesion(myForm)" #myForm="ngForm">
                 <div class="content__wrapp-indication mt-4">
                     <h2 class="content__indication">
                         PARA DAR INICIO, INGRESE SUS DATOS PARA VALIDAR
@@ -27,7 +27,12 @@
                               <label for="">USUARIO</label>
                           </td>
                           <td>
-                              <input type="text" name="" id="" class="content__input">
+                              <input type="text" 
+                                     name="usuario"
+                                     class="content__input"
+                                     [(ngModel)]="sesionUsuario.usuario"
+                                     minlength="1"
+                                     required>
                           </td>
                         </tr>
                         <tr>
@@ -35,14 +40,19 @@
                               <label for="">CLAVE</label>
                           </td>
                           <td>
-                              <input type="password" name="" id="" class="content__input">
+                              <input type="password" 
+                                     name="clave"
+                                     class="content__input"
+                                     [(ngModel)]="sesionUsuario.clave"
+                                     minlength="3"
+                                     required>
                           </td>
                         </tr>
                     </table>
                 </div>
 
                 <div class="content__wrapp-submit mt-4">
-                    <button type="button" class="btn btn-success">INICIAR</button>
+                    <button type="submit" class="btn btn-success">INICIAR</button>
                 </div>
             </form>
         </div>

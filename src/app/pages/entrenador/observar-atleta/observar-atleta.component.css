@@ -19,3 +19,23 @@
 .opciones-funciones__boton {
     margin: 0 15px;
 }
+
+
+/*------ MEDIAS QUERYS -------*/
+@media (max-width: 768px) {
+    .bienvenida {
+        margin-top: 10px !important;
+    }
+
+    .bienvenida__info {
+        margin: 0 !important;
+      text-align: center;
+    }
+
+    .bienvenida__lista-atletas {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 50px;
+    }
+}

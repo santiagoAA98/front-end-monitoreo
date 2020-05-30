@@ -14,7 +14,8 @@ import { ListaAtletasComponent } from './lista-atletas/lista-atletas.component';
     EntrenadorHomeComponent,
     EntrenadorEventoComponent,
     ObservarAtletaComponent,
-    ListaAtletasComponent],
+    ListaAtletasComponent
+  ],
   imports: [
     CommonModule,
     EntrenadorRoutingModule

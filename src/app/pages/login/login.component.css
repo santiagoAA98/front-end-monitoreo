@@ -15,7 +15,7 @@
 
 /* ------- IMAGEN -------*/
 .content__wrapp-img {
-    width: 12%;
+    width: 150px;
     margin: 0 auto;
 }
 
@@ -36,9 +36,6 @@
 
 
 /* ------- FORM -------*/
-.content__wrapp-form {
-}
-
 .content__wrapp-indication {
     text-align: center;
 }
@@ -62,3 +59,35 @@
     text-align: center;
 }
 
+/*------ MEDIAS QUERYS -------*/
+@media (max-device-width: 1200px) and (min-device-height: 1023px){
+    .content__wrapp-img {
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    .content__title {
+        font-size: 35px;
+    }
+
+    .content__indication {
+        font-size: 25px;
+    }
+}
+
+@media (max-device-width: 768px) {
+    .content__wrapp-img {
+        width: 30%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-device-width: 576px) {
+    .content__title {
+        font-size: 15px;
+    }
+
+    .content__indication {
+        font-size: 10px;
+    }
+}
