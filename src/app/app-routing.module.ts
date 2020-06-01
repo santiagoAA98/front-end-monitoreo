@@ -4,10 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 
 import { AuthGuard } from './core/guards/auth.guard';
+import { LoginGuard } from './core/guards/login.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent, pathMatch: 'full'},
-  { path: 'login',  component: LoginComponent },
+  { path: '', canActivate: [LoginGuard], component: LoginComponent, pathMatch: 'full'},
+  { path: 'login', canActivate: [LoginGuard], component: LoginComponent },
   {
     path: 'administrador',
     data: {rol: 'administrador'},
@@ -26,7 +27,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     loadChildren: () => import('./pages/atleta/atleta.module').then(m => m.AtletaModule)
   },
-  { path: '**',  pathMatch: 'full', redirectTo: 'login' }
+  { path: '**', canActivate: [LoginGuard], pathMatch: 'full', redirectTo: 'login' }
 ];
 
 @NgModule({

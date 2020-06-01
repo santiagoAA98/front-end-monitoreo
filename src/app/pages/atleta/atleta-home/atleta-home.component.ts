@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-atleta-home',
@@ -11,9 +12,13 @@ export class AtletaHomeComponent implements OnInit {
   age = '19 AÑOS';
   telefono = '33333444';
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
+  }
+
+  cerrarSesion() {
+    this.auth.cerrarSesion();
   }
 
 }

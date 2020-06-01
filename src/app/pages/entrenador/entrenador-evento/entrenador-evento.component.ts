@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-entrenador-evento',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntrenadorEventoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
+  }
+
+  cerrarSesion() {
+    this.auth.cerrarSesion();
   }
 
 }

@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit{
           if (sesionInfo.rol === 'administrador') {
             this.router.navigateByUrl('/administrador');
           } else if (sesionInfo.rol === 'entrenador') {
-            console.log('hola mundo');
             this.router.navigateByUrl('/entrenador');
           } else if (sesionInfo.rol === 'atleta') {
             this.router.navigateByUrl('/atleta');

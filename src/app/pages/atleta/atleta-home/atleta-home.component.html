@@ -1,7 +1,14 @@
  <div class="container-fluid mt-3">
     <div class="botones-navegacion">
-        <button type="button" class="btn btn-danger botones-navegacion__boton">ATRAS</button>
-        <button type="button" class="btn btn-danger botones-navegacion__boton">CERRAR SESION</button>
+        <button type="button" 
+                class="btn btn-danger botones-navegacion__boton">
+                ATRAS
+        </button>
+        <button type="button" 
+                class="btn btn-danger botones-navegacion__boton"
+                (click)="cerrarSesion()">
+            CERRAR SESION
+        </button>
     </div>
 
     <div class="bienvenida">
