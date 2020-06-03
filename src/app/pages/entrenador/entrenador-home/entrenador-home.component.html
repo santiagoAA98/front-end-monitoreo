@@ -14,7 +14,7 @@
     <div class="bienvenida mt-5">
         <div class="bienvenida__info">
             <p>
-                BIENVENIDO, LISS
+                BIENVENIDO, {{ entrenador?.nombre | uppercase }}
                 <br><br>
                 ESTAS EN LA ZONA DE ENTRENADOR
             </p>
@@ -24,10 +24,10 @@
         </div>
         <div class="bienvenida__info-personal">
             <P>
-                PERFIL PROFESIONAL <br>
-                NOMBRE: <br>
-                EDAD: <br>
-                TELEFONO: <br>
+                <b><font color='red'> PERFIL PROFESIONAL </font></b> <br>
+                NOMBRE: {{ entrenador?.nombreCompleto | uppercase }} <br>
+                CORREO: {{ entrenador?.correo | uppercase }} <br>
+                TELEFONO: {{ entrenador?.telefono | uppercase }} <br>
                 ENTRENADOR ENCARGADO DE CIRCUITOS DE TRIATLON
             </P>
         </div>
