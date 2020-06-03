@@ -14,7 +14,7 @@ export class AuthService {
   constructor( private http: HttpClient,
                private router: Router) {}
 
-  iniciarSesion(sesionUsuario: Sesion){
+  iniciarSesion(sesionUsuario: Sesion) {
     return this.http.post(this.url, JSON.stringify(sesionUsuario)
     ).pipe(
       map( resp => {

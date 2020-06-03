@@ -14,7 +14,7 @@
     <div class="bienvenida">
         <div class="bienvenida__info">
             <p>
-                BIENVENIDO {{ name }}
+                BIENVENIDO {{ atleta?.nombre | uppercase}}
                 <br><br>
                 ESTAS EN TU PERFIL DE ATLETA
             </p>
@@ -28,9 +28,9 @@
         <div class="col-md-3">
             <p class="info-perfil">
                 PERFIL <br>
-                NOMBRE: {{ name }}  <br>
-                EDAD: {{ age }} <br>
-                TELEFONO: {{ telefono }} <br>
+                NOMBRE: {{ atleta?.nombreCompleto | uppercase}}  <br>
+                EDAD: {{ atleta?.edad | uppercase}} <br>
+                TELEFONO: {{ atleta?.telefono | uppercase}} <br>
                 ATLETA ESTUDIANTE <br>
                 DE DEPORTES DEL POLITECNICO <br>
                 JAIME ISAZA CADAVID
