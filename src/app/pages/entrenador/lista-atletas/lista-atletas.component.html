@@ -1,12 +1,12 @@
 <table class="mt-4 tabla-atletas" style="width:40%">
-    <tr *ngFor="let item of items">
+    <tr *ngFor="let atleta of atletas">
         <td>
             <div class="wrap-imagen wrap-imagen-col">
                 <img src="../../../../assets/img/profile-atleta.jpeg" class="img-perfil" alt="foto atleta a observar">
             </div>
         </td>
         <td style="background-color: #fff;">
-            {{ item }}
+            {{ atleta?.nombre }}
         </td>
         <td style="background-color: #fff;">
             <input type="checkbox">

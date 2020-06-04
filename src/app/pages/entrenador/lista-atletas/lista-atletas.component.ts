@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Atleta } from 'src/app/core/models/atleta.model';
 
 @Component({
   selector: 'app-lista-atletas',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaAtletasComponent implements OnInit {
 
-  items = ['apple', 'orange'];
+  @Input()
+  atletas: Atleta[] = [];
 
   constructor() { }
 
