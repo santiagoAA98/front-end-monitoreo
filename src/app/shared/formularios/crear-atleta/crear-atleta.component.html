@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <form>
+    <form [formGroup]="myForm" (submit)="crearAtleta()">
         <p>
             <b>
                 <font color="red">
@@ -9,84 +9,84 @@
         </p>
         <div class="form-group">
             <label for="usuario">USUARIO</label>
-            <input type="text" class="form-control" id="usuario">
+            <input type="text" class="form-control" id="usuario" formControlName="usuario">
         </div>
         <div class="form-group">
             <label for="clave">CLAVE</label>
-            <input type="password" class="form-control" id="clave">
+            <input type="password" class="form-control" id="clave" formControlName="clave">
         </div>
         <div class="form-group">
             <label for="cedula_atleta">CEDULA</label>
-            <input type="number" class="form-control" id="cedula_atleta">
+            <input type="number" class="form-control" id="cedula_atleta" formControlName="cedula_atleta">
         </div>
         <div class="form-group">
             <label for="nombre">NOMBRE</label>
-            <input type="text" class="form-control" id="nombre">
+            <input type="text" class="form-control" id="nombre" formControlName="nombre">
         </div>
         <div class="form-group">
             <label for="apellidos">APELLIDOS</label>
-            <input type="text" class="form-control" id="apellidos">
+            <input type="text" class="form-control" id="apellidos" formControlName="apellidos">
         </div>
         <div class="form-group">
             <label for="edad">EDAD</label>
-            <input type="number" class="form-control" id="edad">
+            <input type="number" class="form-control" id="edad" formControlName="edad">
         </div>
         <div class="form-group">
             <label for="telefono">TELEFONO</label>
-            <input type="number" class="form-control" id="telefono">
+            <input type="number" class="form-control" id="telefono" formControlName="telefono">
         </div>
         <div class="form-group">
             <label for="correo">CORREO</label>
-            <input type="email" class="form-control" id="correo">
+            <input type="email" class="form-control" id="correo" formControlName="correo">
         </div>
         <div class="form-group">
             <label for="estatura">ESTATURA</label>
-            <input type="number" class="form-control" id="estatura">
+            <input type="number" class="form-control" id="estatura" formControlName="estatura">
         </div>
         <div class="form-group">
             <label for="peso">PESO</label>
-            <input type="number" class="form-control" id="peso">
+            <input type="number" class="form-control" id="peso" formControlName="peso">
         </div>
         <div class="form-group">
             <label for="talla_camisa">TALLA_CAMISA</label>
-            <input type="number" class="form-control" id="talla_camisa">
+            <input type="number" class="form-control" id="talla_camisa" formControlName="talla_camisa">
         </div>
 
         <div class="form-group">
             <label for="tipo_sangre">TIPO_SANGRE</label>
-            <input type="text" class="form-control" id="tipo_sangre">
+            <input type="text" class="form-control" id="tipo_sangre" formControlName="tipo_sangre">
         </div>
         <div class="form-group">
             <label for="alergias">ALERGIAS</label>
-            <textarea class="form-control" id="alergias" rows="2"></textarea>
+            <textarea class="form-control" id="alergias" rows="2" formControlName="alergias"></textarea>
         </div>
         <div class="form-group">
             <label for="operaciones">OPERACIONES</label>
-            <textarea class="form-control" id="operaciones" rows="2"></textarea>
+            <textarea class="form-control" id="operaciones" rows="2" formControlName="operaciones"></textarea>
         </div>
         <div class="form-group">
             <label for="lesiones_graves">LESIONES_GRAVES</label>
-            <textarea class="form-control" id="lesiones_graves" rows="2"></textarea>
+            <textarea class="form-control" id="lesiones_graves" rows="2" formControlName="lesiones_graves"></textarea>
         </div>
         <div class="form-group">
             <label for="fracturas">FRACTURAS</label>
-            <textarea class="form-control" id="fracturas" rows="2"></textarea>
+            <textarea class="form-control" id="fracturas" rows="2" formControlName="fracturas"></textarea>
         </div>
         <div class="form-group">
             <label for="sexo">SEXO</label>
-            <input type="text" class="form-control" id="sexo">
+            <input type="text" class="form-control" id="sexo" formControlName="sexo">
         </div>
         <div class="form-group">
             <label for="especialidades">ESPECIALIDADES</label>
-            <textarea class="form-control" id="especialidades" rows="2"></textarea>
+            <textarea class="form-control" id="especialidades" rows="2" formControlName="especialidades"></textarea>
         </div>
         <div class="form-group">
             <label for="año_activo">AÑO_ACTIVO</label>
-            <input type="number" class="form-control" id="año_activo">
+            <input type="number" class="form-control" id="año_activo" formControlName="año_activo">
         </div>
         <div class="form-group">
             <label for="pruebas">PRUEBAS</label>
-            <input type="number" class="form-control" id="pruebas">
+            <textarea class="form-control" id="pruebas" rows="2" formControlName="pruebas"></textarea>
         </div>
         <button type="submit" class="btn btn-success mb-2">Crear</button>
     </form>

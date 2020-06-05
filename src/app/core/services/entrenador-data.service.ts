@@ -18,4 +18,9 @@ export class EntrenadorDataService {
     return this.http.post(`${this.url}controllerConsultarEntrenador.php`, JSON.stringify(data));
   }
 
+  crearEntrenador(entrenadorData: any) {
+    console.log(entrenadorData);
+    this.http.post(`${this.url}controllerCrearEntrenador.php`,  JSON.stringify(entrenadorData)).subscribe();
+  }
+
 }
