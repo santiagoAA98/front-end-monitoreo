@@ -20,7 +20,7 @@ export class EntrenadorDataService {
 
   crearEntrenador(entrenadorData: any) {
     console.log(entrenadorData);
-    this.http.post(`${this.url}controllerCrearEntrenador.php`,  JSON.stringify(entrenadorData)).subscribe();
+    this.http.post(`${this.url}controllerCrearEntrenador.php`, JSON.stringify(entrenadorData)).subscribe( resp => console.log(resp));
   }
 
 }

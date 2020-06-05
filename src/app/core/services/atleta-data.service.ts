@@ -29,7 +29,10 @@ export class AtletaDataService {
       return this.http.post(`${this.url}controllerConsultarAtletasEntrenador.php`, JSON.stringify(data));
   }
 
-  crearAtleta() {}
+  crearAtleta(atletaData) {
+    console.log(atletaData);
+    this.http.post(`${this.url}controllerCrearAtleta.php`, JSON.stringify(atletaData)).subscribe( resp => console.log(resp));
+  }
 
   elminarAtleta() {}
 

@@ -17,5 +17,4 @@ export class AdministradorDataService {
   getAdministrador() {
     return this.http.get(`${this.url}controllerConsultarAdministrador.php`);
   }
-
 }
