@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { AdministradorDataService } from 'src/app/core/services/administrador-data.service';
+import { Administrador } from 'src/app/core/models/administrador.model';
 
 @Component({
   selector: 'app-administrador-home',
@@ -8,9 +10,20 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class AdministradorHomeComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  administrador: Administrador;
+  tipoFormulario = 'ninguno';
+
+  constructor(private auth: AuthService,
+              private administradorservice: AdministradorDataService) { }
 
   ngOnInit() {
+    this.consultarAdministrador();
+  }
+
+  consultarAdministrador() {
+      this.administradorservice.getAdministrador().subscribe( (resp: any) => {
+        this.administrador = new Administrador(resp);
+      });
   }
 
   cerrarSesion() {

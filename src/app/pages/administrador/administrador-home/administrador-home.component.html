@@ -1,10 +1,8 @@
 <div class="container-fluid mt-4">
     <div class="botones-navegacion">
         <button type="button" class="btn btn-danger botones-navegacion__boton">ATRAS</button>
-        <button type="button" 
-                class="btn btn-danger botones-navegacion__boton"
-                (click)="cerrarSesion()">
-                CERRAR SESION
+        <button type="button" class="btn btn-danger botones-navegacion__boton" (click)="cerrarSesion()">
+            CERRAR SESION
         </button>
     </div>
 
@@ -17,7 +15,7 @@
             </p>
         </div>
         <div class="bienvenida__img-poli">
-            <img src="../../../../assets/img/escudo-politecnico-jic.jpg" alt="escudo politecnico jic"> 
+            <img src="../../../../assets/img/escudo-politecnico-jic.jpg" alt="escudo politecnico jic">
         </div>
     </div>
 
@@ -25,38 +23,45 @@
         <div class="col-md-3">
             <div class="wrap-opciones">
                 <div>
-                    <a href="">Crear Entrenador</a> <br>
+                    <a type="button" (click)="tipoFormulario = 'crearEntrenador'">Crear Entrenador</a> <br>
                 </div>
                 <div>
-                    <a href="">Crear Atleta</a> <br>
+                    <a type="button" (click)="tipoFormulario = 'crearAtleta'">Crear Atleta</a> <br>
                 </div>
                 <div>
-                    <a href="">Eliminar entrenador</a> <br>
+                    <a type="button" (click)="tipoFormulario = 'eliminarEntrenador'">Eliminar entrenador</a> <br>
                 </div>
                 <div>
-                    <a href="">Eliminar Atleta</a> <br>
+                    <a type="button" (click)="tipoFormulario = 'eliminarAtleta'">Eliminar Atleta</a> <br>
                 </div>
             </div>
         </div>
         <div class="col-md-7 mt-5 opciones-funciones">
             <div class="mb-3">
                 <span class="mr-5">
-                    <button type="button" class="btn btn-light opciones-funciones__boton">AGREGAR INFORME</button>                    
+                    <button type="button" class="btn btn-light opciones-funciones__boton">AGREGAR INFORME</button>
                 </span>
                 <span>
-                    <button type="button" class="btn btn-light opciones-funciones__boton">EDITAR PERFIL</button>
+                    <button type="button" 
+                            class="btn btn-light opciones-funciones__boton" 
+                            (click)="tipoFormulario = 'editarPerfil'">
+                            EDITAR PERFIL
+                    </button>
                 </span>
             </div>
 
-            <app-form-editar-perfil></app-form-editar-perfil>
 
-            <app-form-crear-atleta></app-form-crear-atleta>
+            <div [ngSwitch]="tipoFormulario" id="opcion">
+                <app-form-editar-perfil *ngSwitchCase="'editarPerfil'" [administrador]="administrador" ></app-form-editar-perfil>
 
-            <app-form-crear-entrenador></app-form-crear-entrenador>
+                <app-form-crear-atleta *ngSwitchCase="'crearAtleta'" ></app-form-crear-atleta>
 
-            <app-form-eliminar-atleta></app-form-eliminar-atleta>
+                <app-form-crear-entrenador *ngSwitchCase="'crearEntrenador'" ></app-form-crear-entrenador>
 
-            <app-form-eliminar-entrenador></app-form-eliminar-entrenador>
+                <app-form-eliminar-atleta *ngSwitchCase="'eliminarAtleta'" ></app-form-eliminar-atleta>
+
+                <app-form-eliminar-entrenador *ngSwitchCase="'eliminarEntrenador'" ></app-form-eliminar-entrenador>
+            </div>
         </div>
     </div>
 </div>

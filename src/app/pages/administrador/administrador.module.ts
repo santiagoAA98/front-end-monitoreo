@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 import { AdministradorRoutingModule } from './administrador-routing.module';
 import { AdministradorHomeComponent } from './administrador-home/administrador-home.component';
 import { FormEditarPerfilComponent } from './form-editar-perfil/form-editar-perfil.component';
@@ -21,7 +23,9 @@ import { FormEliminarAtletaComponent } from './form-eliminar-atleta/form-elimina
   ],
   imports: [
     CommonModule,
-    AdministradorRoutingModule
+    AdministradorRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AdministradorModule { }
