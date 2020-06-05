@@ -7,6 +7,7 @@ import { EntrenadorHomeComponent } from './entrenador-home/entrenador-home.compo
 import { EntrenadorEventoComponent } from './entrenador-evento/entrenador-evento.component';
 import { ObservarAtletaComponent } from './observar-atleta/observar-atleta.component';
 import { ListaAtletasComponent } from './lista-atletas/lista-atletas.component';
+import { FormEditarPerfilComponent } from './form-editar-perfil/form-editar-perfil.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ListaAtletasComponent } from './lista-atletas/lista-atletas.component';
     EntrenadorHomeComponent,
     EntrenadorEventoComponent,
     ObservarAtletaComponent,
-    ListaAtletasComponent
+    ListaAtletasComponent,
+    FormEditarPerfilComponent
   ],
   imports: [
     CommonModule,
