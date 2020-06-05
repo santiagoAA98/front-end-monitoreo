@@ -52,16 +52,18 @@
 
 
             <div [ngSwitch]="tipoFormulario" id="opcion">
-                <app-form-editar-perfil *ngSwitchCase="'editarPerfil'" [administrador]="administrador" ></app-form-editar-perfil>
+                <app-editar-administrador *ngSwitchCase="'editarPerfil'" [administrador]="administrador"></app-editar-administrador>
 
-                <app-form-crear-atleta *ngSwitchCase="'crearAtleta'" ></app-form-crear-atleta>
+                <app-crear-atleta *ngSwitchCase="'crearAtleta'" ></app-crear-atleta>
 
-                <app-form-crear-entrenador *ngSwitchCase="'crearEntrenador'" ></app-form-crear-entrenador>
+                <app-crear-entrenador *ngSwitchCase="'crearEntrenador'" ></app-crear-entrenador>
 
-                <app-form-eliminar-atleta *ngSwitchCase="'eliminarAtleta'" ></app-form-eliminar-atleta>
+                <app-eliminar-atleta *ngSwitchCase="'eliminarAtleta'" ></app-eliminar-atleta>
 
-                <app-form-eliminar-entrenador *ngSwitchCase="'eliminarEntrenador'" ></app-form-eliminar-entrenador>
+                <app-eliminar-entrenador *ngSwitchCase="'eliminarEntrenador'" ></app-eliminar-entrenador>
             </div>
+
+          
         </div>
     </div>
 </div>

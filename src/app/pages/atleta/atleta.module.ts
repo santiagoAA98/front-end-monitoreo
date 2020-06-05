@@ -3,14 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { AtletaRoutingModule } from './atleta-routing.module';
 import { AtletaHomeComponent } from './atleta-home/atleta-home.component';
-import { FormEditarPerfilComponent } from './form-editar-perfil/form-editar-perfil.component';
+import { FormulariosModule } from 'src/app/shared/formularios/formularios.module';
 
 
 @NgModule({
-  declarations: [AtletaHomeComponent, FormEditarPerfilComponent],
+  declarations: [AtletaHomeComponent],
   imports: [
     CommonModule,
-    AtletaRoutingModule
+    AtletaRoutingModule,
+    FormulariosModule
   ]
 })
 export class AtletaModule { }

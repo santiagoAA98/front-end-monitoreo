@@ -1,14 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { Administrador } from 'src/app/core/models/administrador.model';
 import { AdministradorDataService } from 'src/app/core/services/administrador-data.service';
 
 @Component({
-  selector: 'app-form-editar-perfil',
-  templateUrl: './form-editar-perfil.component.html',
-  styleUrls: ['./form-editar-perfil.component.css']
+  selector: 'app-editar-administrador',
+  templateUrl: './editar-administrador.component.html',
+  styleUrls: ['./editar-administrador.component.css']
 })
-export class FormEditarPerfilComponent implements OnInit {
+export class EditarAdministradorComponent implements OnInit {
 
   @Input()
   administrador: Administrador;
@@ -16,8 +17,7 @@ export class FormEditarPerfilComponent implements OnInit {
   myForm: FormGroup;
 
   constructor(private formB: FormBuilder,
-              private administradorService: AdministradorDataService) {
-  }
+              private administradorService: AdministradorDataService) { }
 
   ngOnInit() {
     this.crearFormulario();
@@ -43,5 +43,4 @@ export class FormEditarPerfilComponent implements OnInit {
 
     this.administradorService.actualizarInfoAdministrador(data);
   }
-
 }

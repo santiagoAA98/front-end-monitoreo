@@ -1,31 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
 import { AdministradorRoutingModule } from './administrador-routing.module';
 import { AdministradorHomeComponent } from './administrador-home/administrador-home.component';
-import { FormEditarPerfilComponent } from './form-editar-perfil/form-editar-perfil.component';
-import { FormCrearAtletaComponent } from './form-crear-atleta/form-crear-atleta.component';
-import { FormCrearEntrenadorComponent } from './form-crear-entrenador/form-crear-entrenador.component';
-import { FormEliminarEntrenadorComponent } from './form-eliminar-entrenador/form-eliminar-entrenador.component';
-import { FormEliminarAtletaComponent } from './form-eliminar-atleta/form-eliminar-atleta.component';
 
+
+import { FormulariosModule } from 'src/app/shared/formularios/formularios.module';
 
 @NgModule({
   declarations: [
-    AdministradorHomeComponent,
-    FormEditarPerfilComponent,
-    FormCrearAtletaComponent,
-    FormCrearEntrenadorComponent,
-    FormEliminarEntrenadorComponent,
-    FormEliminarAtletaComponent
+    AdministradorHomeComponent
   ],
   imports: [
     CommonModule,
     AdministradorRoutingModule,
-    ReactiveFormsModule,
-    FormsModule
+    FormulariosModule
   ]
 })
 export class AdministradorModule { }
