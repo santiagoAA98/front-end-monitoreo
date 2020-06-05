@@ -8,7 +8,7 @@ import { ObservarAtletaComponent } from './observar-atleta/observar-atleta.compo
 const routes: Routes = [
   { path: 'home', component: EntrenadorHomeComponent },
   { path: 'observar-atleta',  component: ObservarAtletaComponent },
-  { path: 'crear-evento', component: EntrenadorEventoComponent },
+  { path: 'crear-evento/:cedulaEntrenador/:nombreEntrenador', component: EntrenadorEventoComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

@@ -4,8 +4,6 @@ import { EntrenadorDataService } from 'src/app/core/services/entrenador-data.ser
 import { AtletaDataService } from 'src/app/core/services/atleta-data.service';
 import { Entrenador } from 'src/app/core/models/entrenador.model';
 import { Atleta } from 'src/app/core/models/atleta.model';
-import { flatMap } from 'rxjs/operators';
-import { resolve } from 'url';
 
 @Component({
   selector: 'app-entrenador-home',
