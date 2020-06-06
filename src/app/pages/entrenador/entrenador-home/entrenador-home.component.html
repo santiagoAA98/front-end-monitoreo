@@ -1,7 +1,8 @@
 <div class="container-fluid mt-3">
     <div class="botones-navegacion">
         <button type="button" 
-                class="btn btn-danger botones-navegacion__boton">
+                class="btn btn-danger botones-navegacion__boton"
+                (click)="formEditar=true">
                 EDITAR PERFIL
         </button>
         <button type="button" 
@@ -82,7 +83,9 @@
             </div>
 
 
-            <app-editar-entrenador></app-editar-entrenador>
+            <div *ngIf="formEditar">
+                <app-editar-entrenador [entrenador]="entrenador" ></app-editar-entrenador>
+            </div>
 
 
             <div class="content__wrapp-img mt-4">

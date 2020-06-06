@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+import { Entrenador } from 'src/app/core/models/entrenador.model';
 import { EntrenadorDataService } from 'src/app/core/services/entrenador-data.service';
 
 @Component({
@@ -9,6 +10,9 @@ import { EntrenadorDataService } from 'src/app/core/services/entrenador-data.ser
   styleUrls: ['./editar-entrenador.component.css']
 })
 export class EditarEntrenadorComponent implements OnInit {
+
+  @Input()
+  entrenador: Entrenador;
 
   myForm: FormGroup;
 
@@ -21,15 +25,24 @@ export class EditarEntrenadorComponent implements OnInit {
 
   crearformulario() {
     this.myForm = this.formB.group({
-      nombres: ['', Validators.required],
-      apellidos: ['', Validators.required],
-      telefono: [, Validators.required],
-      correo: ['', Validators.required],
+      nombre: [this.entrenador.nombre , Validators.required],
+      apellidos: [this.entrenador.apellidos , Validators.required],
+      telefono: [this.entrenador.telefono , Validators.required],
+      correo: [ this.entrenador.correo , Validators.required],
     });
   }
 
   actualizarEntrenador() {
-    console.log(this.myForm);
+    const data = {
+      cedula: this.entrenador.cedulaEntrenador,
+      nombre: this.myForm.controls.nombre.value,
+      apellidos: this.myForm.controls.apellidos.value,
+      telefono: this.myForm.controls.telefono.value,
+      correo: this.myForm.controls.correo.value
+    };
+
+    console.log(data);
+    this.entrenadorService.actualizarEntrenador(data);
   }
 
 }

@@ -31,4 +31,8 @@ export class EntrenadorDataService {
     this.http.post(`${this.url}controllerEliminarEntrenador.php`, JSON.stringify(cedulaEntrenador)).subscribe( resp => console.log(resp));
   }
 
+  actualizarEntrenador(entrenador: any) {
+    this.http.post(`${this.url}controllerActualizarEntrenador.php`, JSON.stringify(entrenador)).subscribe(resp => console.log(resp));
+  }
+
 }

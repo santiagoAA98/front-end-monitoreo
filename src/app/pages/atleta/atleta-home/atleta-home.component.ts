@@ -10,6 +10,7 @@ import { Atleta } from 'src/app/core/models/atleta.model';
 })
 export class AtletaHomeComponent implements OnInit {
 
+  formEditar = false;
   atleta: Atleta;
 
   constructor(private auth: AuthService,

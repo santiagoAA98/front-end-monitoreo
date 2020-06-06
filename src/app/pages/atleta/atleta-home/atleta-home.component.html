@@ -42,7 +42,7 @@
                     <button type="button" class="btn btn-light opciones-funciones__boton">INICIAR ACTIVIDAD</button>                    
                 </span>
                 <span>
-                    <button type="button" class="btn btn-light opciones-funciones__boton">EDITAR PERFIL</button>
+                    <button type="button" class="btn btn-light opciones-funciones__boton" (click)="formEditar=true">EDITAR PERFIL</button>
                 </span>
             </div>
             <div class="mb-3">
@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <app-editar-atleta></app-editar-atleta>
+        <app-editar-atleta [atleta]="atleta" *ngIf="formEditar" ></app-editar-atleta>
     </div>
 
     <div class="content__wrapp-img">

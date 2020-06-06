@@ -12,6 +12,7 @@ import { Atleta } from 'src/app/core/models/atleta.model';
 })
 export class EntrenadorHomeComponent implements OnInit {
 
+  formEditar = false;
   entrenador: Entrenador;
   atletas: Atleta[] = [];
 
