@@ -66,7 +66,7 @@ export class CrearAtletaComponent implements OnInit {
       especialidades: this.myForm.controls.especialidades.value,
       año_activo: this.myForm.controls.año_activo.value,
       pruebas: this.myForm.controls.pruebas.value,
-    }
+    };
 
 
     this.atletaService.crearAtleta(data);

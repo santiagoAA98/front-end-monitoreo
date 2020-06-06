@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
+import { EntrenadorDataService } from 'src/app/core/services/entrenador-data.service';
 
 @Component({
   selector: 'app-eliminar-entrenador',
@@ -7,9 +10,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EliminarEntrenadorComponent implements OnInit {
 
-  constructor() { }
+  myForm: FormGroup;
+  cedulasEntrenador: any[] = [];
+
+  constructor(private formB: FormBuilder,
+              private entrenadorService: EntrenadorDataService) { }
 
   ngOnInit() {
+    this.consultarCedulasentrenador();
+    this.crearformulario();
   }
 
+  consultarCedulasentrenador() {
+    this.entrenadorService.getCedulas().subscribe( (resp: any) => {
+      this.cedulasEntrenador = resp;
+    });
+  }
+
+  crearformulario() {
+    this.myForm = this.formB.group({
+      cedula_entrenador: [, Validators.required],
+    });
+  }
+
+  eliminarEntrenador() {
+    const data = {
+      cedula_entrenador : this.myForm.controls.cedula_entrenador.value
+    };
+
+    this.entrenadorService.eliminarEntrenador(data);
+  }
 }

@@ -23,4 +23,12 @@ export class EntrenadorDataService {
     this.http.post(`${this.url}controllerCrearEntrenador.php`, JSON.stringify(entrenadorData)).subscribe( resp => console.log(resp));
   }
 
+  getCedulas(): any {
+    return this.http.get(`${this.url}controllerConsultarCedulasEntrenador.php`);
+  }
+
+  eliminarEntrenador(cedulaEntrenador: any) {
+    this.http.post(`${this.url}controllerEliminarEntrenador.php`, JSON.stringify(cedulaEntrenador)).subscribe( resp => console.log(resp));
+  }
+
 }

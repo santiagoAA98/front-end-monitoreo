@@ -34,7 +34,13 @@ export class AtletaDataService {
     this.http.post(`${this.url}controllerCrearAtleta.php`, JSON.stringify(atletaData)).subscribe( resp => console.log(resp));
   }
 
-  elminarAtleta() {}
+  getCedulas(): any {
+    return this.http.get(`${this.url}controllerConsultarCedulasAtletas.php`);
+  }
+
+  eliminarAtleta(cedulaAtleta: any) {
+    this.http.post(`${this.url}controllerEliminarAtleta.php`, JSON.stringify(cedulaAtleta)).subscribe( resp => console.log(resp));
+  }
 
   actualizarAtleta() {}
 

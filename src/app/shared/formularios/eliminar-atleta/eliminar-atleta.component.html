@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <form>
+    <form [formGroup]="myForm" (submit)="eliminarAtleta()">
         <p>
             <b>
                 <font color="red">
@@ -7,9 +7,9 @@
                 </font>
             </b>
         </p>
-        <select class="custom-select">
+        <select class="custom-select" formControlName="cedula_atleta">
             <option selected>seleccionar atleta</option>
-            <option value=""></option>
+            <option *ngFor="let cedula of cedulasAtletas" [value]="cedula">{{ cedula }}</option>
         </select>
         <button type="submit" class="btn btn-success mt-4 mb-2">eliminar</button>
     </form>
