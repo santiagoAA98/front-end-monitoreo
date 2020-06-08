@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { EntrenadorRoutingModule } from './entrenador-routing.module';
-
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { FormulariosModule } from 'src/app/shared/formularios/formularios.module';
 
 import { EntrenadorHomeComponent } from './entrenador-home/entrenador-home.component';
@@ -21,7 +21,9 @@ import { ListaAtletasComponent } from './lista-atletas/lista-atletas.component';
   imports: [
     CommonModule,
     EntrenadorRoutingModule,
-    FormulariosModule
+    FormulariosModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class EntrenadorModule { }

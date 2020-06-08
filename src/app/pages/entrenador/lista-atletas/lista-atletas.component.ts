@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Atleta } from 'src/app/core/models/atleta.model';
+import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-lista-atletas',
@@ -11,9 +12,41 @@ export class ListaAtletasComponent implements OnInit {
   @Input()
   atletas: Atleta[] = [];
 
-  constructor() { }
+  @Output()
+  cedulaAtletaSelected: EventEmitter<any>;
+
+  checkList: boolean[] = [];
+
+  constructor() {
+    this.cedulaAtletaSelected = new EventEmitter();
+    this.cedulaAtletaSelected.emit('');
+  }
 
   ngOnInit() {
+    setTimeout(() => {
+      this.chekedList();
+    }, 1500);
+
+  }
+
+  checkSelected(e: any, i: number) {
+      if (e.target.checked) {
+        this.checkList.forEach( (value, index) => {
+              if (index !== i) {
+                this.checkList[index] = false;
+              }
+        });
+
+        this.cedulaAtletaSelected.emit(e.target.value);
+      } else {
+        this.cedulaAtletaSelected.emit('');
+      }
+  }
+
+  chekedList() {
+    for (const iterator of this.atletas) {
+        this.checkList.push(false);
+    }
   }
 
 }

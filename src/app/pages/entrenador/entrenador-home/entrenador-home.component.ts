@@ -15,6 +15,7 @@ export class EntrenadorHomeComponent implements OnInit {
   formEditar = false;
   entrenador: Entrenador;
   atletas: Atleta[] = [];
+  cedulaAtletaSeleccionado: any;
 
   constructor(private auth: AuthService,
               private entrenadorService: EntrenadorDataService,
@@ -38,6 +39,10 @@ export class EntrenadorHomeComponent implements OnInit {
         this.atletas.push(atleta);
       }
     });
+  }
+
+  obtenerAtletaSeleccionado(cedula: any) {
+    this.cedulaAtletaSeleccionado = cedula;
   }
 
   cerrarSesion() {
