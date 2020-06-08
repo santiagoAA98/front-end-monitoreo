@@ -12,10 +12,10 @@ import { Atleta } from 'src/app/core/models/atleta.model';
 })
 export class EntrenadorHomeComponent implements OnInit {
 
-  formEditar = false;
+  tipoFormulario: any;
   entrenador: Entrenador;
   atletas: Atleta[] = [];
-  cedulaAtletaSeleccionado: any;
+  atletaSeleccionado: Atleta;
 
   constructor(private auth: AuthService,
               private entrenadorService: EntrenadorDataService,
@@ -41,8 +41,30 @@ export class EntrenadorHomeComponent implements OnInit {
     });
   }
 
+  verificarAtletaEditar() {
+    if (this.atletaSeleccionado) {
+      this.tipoFormulario = 'editarAtleta';
+    } else {
+      alert('Selecciona primero un atleta');
+    }
+  }
+
+  eliminarAtleta() {
+    if (this.atletaSeleccionado) {
+      const data = {
+        cedula_atleta : this.atletaSeleccionado.cedulaAtleta
+      };
+
+      this.atletaService.eliminarAtleta(data);
+    } else {
+      alert('Selecciona primero un atleta para eliminar');
+    }
+  }
+
   obtenerAtletaSeleccionado(cedula: any) {
-    this.cedulaAtletaSeleccionado = cedula;
+    const busquedaAtleta = this.atletas.filter( atleta => atleta.cedulaAtleta === cedula );
+    this.atletaSeleccionado = busquedaAtleta[0];
+
   }
 
   cerrarSesion() {

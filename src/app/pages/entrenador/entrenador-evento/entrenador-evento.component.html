@@ -5,7 +5,6 @@
                 [routerLink]="['/home']">
                 ATRAS
         </button>
-        <button type="button" class="btn btn-danger botones-navegacion__boton">EDITAR PERFIL</button>
         <button type="button" 
                 class="btn btn-danger botones-navegacion__boton"
                 (click)="cerrarSesion()">
@@ -31,10 +30,10 @@
         <div class="row mt-5">
             <div class="col-md-6">
                 seleccionar atletas para el evento:
-                <app-lista-atletas [atletas]="atletas" ></app-lista-atletas>
+                <app-lista-atletas (cedulasAtletasSelected)="obtenerAtletasSeleccionados($event)" [tipoVista]="tipoVista" [atletas]="atletas" ></app-lista-atletas>
             </div>
             <div class="col-md-6">
-                <form action="">
+                <form [formGroup]="myform" (submit)="crearEvento()">
                     <div class="content__wrapp-inputs mt-4">
                         <table style="width:100%">
                             <tr>
@@ -42,7 +41,7 @@
                                   <label for="">LUGAR DEL EVENTO</label>
                               </td>
                               <td class="pb-3" >
-                                  <input type="text" name="" id="" class="content__input">
+                                  <input type="text" name="lugar" id="lugar" class="content__input" formControlName="lugar">
                               </td>
                             </tr>
                             <tr>
@@ -50,7 +49,7 @@
                                   <label for="">REQUISITOS PARA EVENTO</label>
                               </td>
                               <td class="pb-3">
-                                  <input type="text" name="" id="" class="content__input">
+                                  <input type="text" name="requisitos" id="requisitos" class="content__input" formControlName="requisitos">
                               </td>
                             </tr>
                             <tr>
@@ -58,7 +57,7 @@
                                     <label for="">FECHA DEL EVENTO</label>
                                 </td>
                                 <td class="pb-3">
-                                    <input type="date" name="" id="" class="content__input">
+                                    <input type="date" name="fecha" id="fecha" class="content__input" formControlName="fecha">
                                 </td>
                             </tr>
                             <tr>
@@ -66,15 +65,15 @@
                                     <label for="">HORA DEL EVENTO</label>
                                 </td>
                                 <td class="pb-3">
-                                    <input type="time" name="" id="" class="content__input">
+                                    <input type="time" name="hora" id="hora" class="content__input" formControlName="hora">
                                 </td>
                             </tr>
                         </table>
                     </div>
 
                     <div class="botones-envio mt-4">
-                        <button type="button" class="btn btn-light botones-navegacion__boton">CANCELAR</button>
-                        <button type="button" class="btn btn-light botones-navegacion__boton">GUARDAR</button>
+                        <button type="button" class="btn btn-light botones-navegacion__boton" (click)="resetearDatosEvento()">CANCELAR</button>
+                        <button type="submit" class="btn btn-light botones-navegacion__boton">GUARDAR</button>
                     </div>
                 </form>
             </div>

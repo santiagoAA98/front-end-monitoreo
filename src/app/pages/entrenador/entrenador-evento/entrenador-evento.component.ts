@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Atleta } from 'src/app/core/models/atleta.model';
 import { AtletaDataService } from 'src/app/core/services/atleta-data.service';
+import { EventoService } from 'src/app/core/services/evento.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-entrenador-evento',
@@ -11,16 +13,31 @@ import { AtletaDataService } from 'src/app/core/services/atleta-data.service';
 })
 export class EntrenadorEventoComponent implements OnInit {
 
+  myform: FormGroup;
   cedulaEntrenador: number;
   nombreEntrenador: string;
   atletas: Atleta[] = [];
+  atletasSeleccionados: Atleta[] = [];
+  tipoVista = 'crearEvento';
 
   constructor(private auth: AuthService,
               private actuvatedRoute: ActivatedRoute,
-              private atletaService: AtletaDataService) { }
+              private atletaService: AtletaDataService,
+              private eventoService: EventoService,
+              private formB: FormBuilder) { }
 
   ngOnInit() {
     this.cargarDatos();
+    this.crearFormulario();
+  }
+
+  crearFormulario() {
+    this.myform = this.formB.group({
+      lugar: ['', Validators.required],
+      requisitos: ['', Validators.required],
+      fecha: ['', Validators.required],
+      hora: ['', Validators.required]
+    });
   }
 
   cargarDatos() {
@@ -29,7 +46,6 @@ export class EntrenadorEventoComponent implements OnInit {
       this.nombreEntrenador = params.nombreEntrenador;
       this.obtenerMisAtletas();
     });
-
   }
 
   obtenerMisAtletas() {
@@ -39,6 +55,27 @@ export class EntrenadorEventoComponent implements OnInit {
         this.atletas.push(atleta);
       }
     });
+  }
+
+  obtenerAtletasSeleccionados(cedulasAtletas: any) {
+    this.atletasSeleccionados = cedulasAtletas;
+  }
+
+  crearEvento() {
+    const data = {
+      lugar: this.myform.value.lugar,
+      requisitos: this.myform.value.requisitos,
+      fecha: this.myform.value.fecha,
+      hora: this.myform.value.hora,
+      cedulaEntrenador: this.cedulaEntrenador,
+      atletas: [...this.atletasSeleccionados]
+    };
+
+    this.eventoService.crearEvento(data);
+  }
+
+  resetearDatosEvento() {
+    this.myform.reset();
   }
 
   cerrarSesion() {

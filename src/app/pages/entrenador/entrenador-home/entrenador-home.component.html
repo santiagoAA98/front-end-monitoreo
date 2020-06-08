@@ -2,7 +2,7 @@
     <div class="botones-navegacion">
         <button type="button" 
                 class="btn btn-danger botones-navegacion__boton"
-                (click)="formEditar=true">
+                (click)="tipoFormulario='editarEntrenador'">
                 EDITAR PERFIL
         </button>
         <button type="button" 
@@ -67,15 +67,15 @@
             </div>
             <div class="mb-3">
                 <span class="mr-5">
-                    <button type="button" class="btn btn-light opciones-funciones__boton">AGREGAR ATLETA</button>
+                    <button type="button" class="btn btn-light opciones-funciones__boton" (click)="tipoFormulario='crear'">AGREGAR ATLETA</button>
                 </span>
                 <span>
-                    <button type="button" class="btn btn-light opciones-funciones__boton">MODIFICAR ATLETA</button>
+                    <button type="button" class="btn btn-light opciones-funciones__boton" (click)="verificarAtletaEditar()">MODIFICAR ATLETA</button>
                 </span>
             </div>
             <div class="mb-3">
                 <span class="mr-5">
-                    <button type="button" class="btn btn-light opciones-funciones__boton">ELIMINAR ATLETA</button>
+                    <button type="button" class="btn btn-light opciones-funciones__boton" (click)="eliminarAtleta()">ELIMINAR ATLETA</button>
                 </span>
                 <span>
                     <button type="button" class="btn btn-light opciones-funciones__boton">CONECTAR DISPOSITIVOS</button>
@@ -83,8 +83,10 @@
             </div>
 
 
-            <div *ngIf="formEditar">
-                <app-editar-entrenador [entrenador]="entrenador" ></app-editar-entrenador>
+            <div [ngSwitch]="tipoFormulario">
+                <app-editar-entrenador *ngSwitchCase="'editarEntrenador'" [entrenador]="entrenador" ></app-editar-entrenador>
+                <app-crear-atleta *ngSwitchCase="'crear'"></app-crear-atleta>
+                <app-editar-atleta *ngSwitchCase="'editarAtleta'" [atleta]="atletaSeleccionado"></app-editar-atleta>
             </div>
 
 

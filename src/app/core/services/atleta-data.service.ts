@@ -13,7 +13,6 @@ export class AtletaDataService {
   constructor(private http: HttpClient) { }
 
   getAtleta(usuarioSesion: any) {
-
     const data = {
       usuario : usuarioSesion
     };
