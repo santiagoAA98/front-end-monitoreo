@@ -17,4 +17,9 @@ export class EventoService {
   consultarEventosDisponibles(cedulaAtleta: any): any {
     return this.http.post(`${this.url}controllerConsultarEventosDisponibles.php`, cedulaAtleta);
   }
+
+
+  agregarResultado(resultado: any) {
+    this.http.post(`${this.url}controllerAgregarResultadoEvento.php`, resultado).subscribe( resp => console.log(resp));
+  }
 }

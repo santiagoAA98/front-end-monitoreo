@@ -16,6 +16,7 @@ export class RegistrarMarcaComponent implements OnInit {
   myForm: FormGroup;
   eventos: Evento[] = [];
   eventoSeleccionado: any;
+  ResultadoObtenido: number;
 
   constructor(private formB: FormBuilder,
               private eventoService: EventoService) { }
@@ -47,5 +48,17 @@ export class RegistrarMarcaComponent implements OnInit {
         this.eventoSeleccionado = evento;
       }
     });
+  }
+
+
+  registrarMarca(formResultado: NgForm) {
+    const data = {
+      idEvento: this.eventoSeleccionado.idEvento,
+      cedulaAtleta: this.eventoSeleccionado.cedulaAtleta,
+      marca: formResultado.value.marca
+    };
+
+    console.log(data);
+    this.eventoService.agregarResultado(data);
   }
 }

@@ -3,20 +3,18 @@
         <p>
             <b>
                 <font color="red">
-                    SELECCIONAR EVENTO A REGISTRAR
+                    EVENTOS DISPONIBLES SIN MARCA REGISTRADA
                 </font>
             </b>
         </p>
         <select class="custom-select" (change)="seleccionarEvento()"  formControlName="idEvento">
-            <option selected>seleccionar evento</option>
             <option *ngFor="let evento of eventos" [value]="evento.idEvento" >{{ evento.fecha }} </option>
         </select>
 
-        <button type="button" (click)="seleccionarEvento()" class="btn btn-success mt-4 mb-2">seleccionar</button>
     </form>
 
 
-    <form *ngIf="eventoSeleccionado" class="mt-4">
+    <form  #formResultado="ngForm" (ngSubmit)="registrarMarca(formResultado)" *ngIf="eventoSeleccionado" class="mt-4">
         <p>
             <b>
                 <font color="red">
@@ -24,9 +22,14 @@
                 </font>
             </b>
         </p>
-        <p> <b> LUGAR  </b>{{ eventoSeleccionado.lugar }} </p>
-        <p> <b> REQUISITOS </b> {{ eventoSeleccionado.requisitos }} </p>
-        <p> <b> FECHA </b> {{ eventoSeleccionado.fecha }} </p>
-        <p> <b> HORA </b> {{ eventoSeleccionado.hora }} </p>
+        <p> <b> LUGAR:  </b>{{ eventoSeleccionado.lugar | uppercase}} </p>
+        <p> <b> REQUISITOS: </b> {{ eventoSeleccionado.requisitos | uppercase}} </p>
+        <p> <b> FECHA: </b> {{ eventoSeleccionado.fecha | uppercase}} </p>
+        <p> <b> HORA: </b> {{ eventoSeleccionado.hora | uppercase}} </p>
+        <div class="form-group">
+            <label for="apellidos"><b>Resultado obtenido</b></label>
+            <input type="number" class="form-control" id="marca" name="marca" [(ngModel)]="ResultadoObtenido">
+        </div>
+        <button type="submit" class="btn btn-success"> Registrar resultado </button>
     </form>
 </div>
