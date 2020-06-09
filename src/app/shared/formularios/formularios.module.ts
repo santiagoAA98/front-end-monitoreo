@@ -9,6 +9,7 @@ import { EliminarAtletaComponent } from './eliminar-atleta/eliminar-atleta.compo
 import { EliminarEntrenadorComponent } from './eliminar-entrenador/eliminar-entrenador.component';
 import { EditarAtletaComponent } from './editar-atleta/editar-atleta.component';
 import { EditarEntrenadorComponent } from './editar-entrenador/editar-entrenador.component';
+import { RegistrarMarcaComponent } from './registrar-marca/registrar-marca.component';
 
 
 
@@ -20,7 +21,8 @@ import { EditarEntrenadorComponent } from './editar-entrenador/editar-entrenador
     EliminarAtletaComponent,
     EliminarEntrenadorComponent,
     EditarAtletaComponent,
-    EditarEntrenadorComponent
+    EditarEntrenadorComponent,
+    RegistrarMarcaComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { EditarEntrenadorComponent } from './editar-entrenador/editar-entrenador
     EliminarAtletaComponent,
     EliminarEntrenadorComponent,
     EditarAtletaComponent,
-    EditarEntrenadorComponent
+    EditarEntrenadorComponent,
+    RegistrarMarcaComponent
   ]
 })
 export class FormulariosModule { }

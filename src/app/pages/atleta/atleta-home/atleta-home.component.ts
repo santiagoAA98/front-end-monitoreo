@@ -12,6 +12,7 @@ export class AtletaHomeComponent implements OnInit {
 
   formEditar = false;
   atleta: Atleta;
+  tipoFormulario: string;
 
   constructor(private auth: AuthService,
               private atletaService: AtletaDataService) {  }

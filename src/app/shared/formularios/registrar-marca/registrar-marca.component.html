@@ -1,0 +1,32 @@
+<div class="container mt-5">
+    <form  [formGroup]="myForm">
+        <p>
+            <b>
+                <font color="red">
+                    SELECCIONAR EVENTO A REGISTRAR
+                </font>
+            </b>
+        </p>
+        <select class="custom-select" (change)="seleccionarEvento()"  formControlName="idEvento">
+            <option selected>seleccionar evento</option>
+            <option *ngFor="let evento of eventos" [value]="evento.idEvento" >{{ evento.fecha }} </option>
+        </select>
+
+        <button type="button" (click)="seleccionarEvento()" class="btn btn-success mt-4 mb-2">seleccionar</button>
+    </form>
+
+
+    <form *ngIf="eventoSeleccionado" class="mt-4">
+        <p>
+            <b>
+                <font color="red">
+                    EVENTO SELECCIONADO
+                </font>
+            </b>
+        </p>
+        <p> <b> LUGAR  </b>{{ eventoSeleccionado.lugar }} </p>
+        <p> <b> REQUISITOS </b> {{ eventoSeleccionado.requisitos }} </p>
+        <p> <b> FECHA </b> {{ eventoSeleccionado.fecha }} </p>
+        <p> <b> HORA </b> {{ eventoSeleccionado.hora }} </p>
+    </form>
+</div>

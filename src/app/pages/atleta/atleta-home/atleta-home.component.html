@@ -1,10 +1,10 @@
  <div class="container-fluid mt-3">
     <div class="botones-navegacion">
-        <button type="button" 
+        <button type="button"
                 class="btn btn-danger botones-navegacion__boton">
                 ATRAS
         </button>
-        <button type="button" 
+        <button type="button"
                 class="btn btn-danger botones-navegacion__boton"
                 (click)="cerrarSesion()">
             CERRAR SESION
@@ -39,10 +39,10 @@
         <div class="col-md-7 opciones-funciones">
             <div class="mb-3">
                 <span class="mr-5">
-                    <button type="button" class="btn btn-light opciones-funciones__boton">INICIAR ACTIVIDAD</button>                    
+                    <button type="button" class="btn btn-light opciones-funciones__boton" (click)="tipoFormulario='marca'">INICIAR ACTIVIDAD</button>
                 </span>
                 <span>
-                    <button type="button" class="btn btn-light opciones-funciones__boton" (click)="formEditar=true">EDITAR PERFIL</button>
+                    <button type="button" class="btn btn-light opciones-funciones__boton" (click)="tipoFormulario='editar'">EDITAR PERFIL</button>
                 </span>
             </div>
             <div class="mb-3">
@@ -55,7 +55,10 @@
             </div>
         </div>
 
-        <app-editar-atleta [atleta]="atleta" *ngIf="formEditar" ></app-editar-atleta>
+        <div [ngSwitch]="tipoFormulario">
+            <app-editar-atleta [atleta]="atleta" *ngSwitchCase="'editar'" ></app-editar-atleta>
+            <app-registrar-marca [cedulaAtleta]="atleta.cedulaAtleta" *ngSwitchCase="'marca'"></app-registrar-marca>
+        </div>
     </div>
 
     <div class="content__wrapp-img">
