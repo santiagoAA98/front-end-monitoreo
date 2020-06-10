@@ -52,13 +52,18 @@ export class RegistrarMarcaComponent implements OnInit {
 
 
   registrarMarca(formResultado: NgForm) {
-    const data = {
-      idEvento: this.eventoSeleccionado.idEvento,
-      cedulaAtleta: this.eventoSeleccionado.cedulaAtleta,
-      marca: formResultado.value.marca
-    };
+    if (formResultado.valid) {
+      const data = {
+        idEvento: this.eventoSeleccionado.idEvento,
+        cedulaAtleta: this.eventoSeleccionado.cedulaAtleta,
+        marca: formResultado.value.marca
+      };
 
-    console.log(data);
-    this.eventoService.agregarResultado(data);
+      this.eventoService.agregarResultado(data);
+      alert('Marca registrada');
+      window.location.reload();
+    } else {
+      alert('No se ha registrado el resultado');
+    }
   }
 }

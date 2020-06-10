@@ -62,16 +62,22 @@ export class EntrenadorEventoComponent implements OnInit {
   }
 
   crearEvento() {
-    const data = {
-      lugar: this.myform.value.lugar,
-      requisitos: this.myform.value.requisitos,
-      fecha: this.myform.value.fecha,
-      hora: this.myform.value.hora,
-      cedulaEntrenador: this.cedulaEntrenador,
-      atletas: [...this.atletasSeleccionados]
-    };
+    if (this.myform.valid) {
+      const data = {
+        lugar: this.myform.value.lugar,
+        requisitos: this.myform.value.requisitos,
+        fecha: this.myform.value.fecha,
+        hora: this.myform.value.hora,
+        cedulaEntrenador: this.cedulaEntrenador,
+        atletas: [...this.atletasSeleccionados]
+      };
 
-    this.eventoService.crearEvento(data);
+      this.eventoService.crearEvento(data);
+      alert('Evento creado con exito');
+      window.location.reload();
+    } else {
+      alert('Completa todo el formulario');
+    }
   }
 
   resetearDatosEvento() {
