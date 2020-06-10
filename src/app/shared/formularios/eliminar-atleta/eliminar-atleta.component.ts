@@ -34,11 +34,17 @@ export class EliminarAtletaComponent implements OnInit {
   }
 
   eliminarAtleta() {
-    const data = {
-      cedula_atleta : this.myForm.controls.cedula_atleta.value
-    };
+    if (this.myForm.controls.cedula_atleta.value) {
+      const data = {
+        cedula_atleta : this.myForm.controls.cedula_atleta.value
+      };
 
-    this.atletaService.eliminarAtleta(data);
+      this.atletaService.eliminarAtleta(data);
+      alert('Atleta eliminado');
+      this.ngOnInit();
+    } else {
+      alert('No se ha escogido atleta');
+    }
   }
 
 }

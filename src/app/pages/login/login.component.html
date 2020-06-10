@@ -51,7 +51,10 @@
                     </table>
                 </div>
 
+                
+
                 <div class="content__wrapp-submit mt-4">
+                    <p class="text-danger" *ngIf="sesionIncorrecta"><b>Usuario o clave incorrectos</b></p>
                     <button type="submit" class="btn btn-success">INICIAR</button>
                 </div>
             </form>

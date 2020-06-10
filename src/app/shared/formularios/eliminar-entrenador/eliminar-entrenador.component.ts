@@ -34,10 +34,17 @@ export class EliminarEntrenadorComponent implements OnInit {
   }
 
   eliminarEntrenador() {
-    const data = {
-      cedula_entrenador : this.myForm.controls.cedula_entrenador.value
-    };
 
-    this.entrenadorService.eliminarEntrenador(data);
+    if (this.myForm.controls.cedula_entrenador.value) {
+      const data = {
+        cedula_entrenador : this.myForm.controls.cedula_entrenador.value
+      };
+
+      this.entrenadorService.eliminarEntrenador(data);
+      alert('Entrenador eliminado');
+      this.ngOnInit();
+    } else {
+      alert('No se ha escogido entrenador');
+    }
   }
 }

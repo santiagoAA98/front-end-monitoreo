@@ -8,9 +8,8 @@
             </b>
         </p>
         <select class="custom-select" formControlName="cedula_atleta">
-            <option selected>seleccionar atleta</option>
-            <option *ngFor="let cedula of cedulasAtletas" [value]="cedula">{{ cedula }}</option>
+            <option *ngFor="let cedula of cedulasAtletas" [value]="cedula"> cedula - {{ cedula }}</option>
         </select>
-        <button type="submit" class="btn btn-success mt-4 mb-2">eliminar</button>
+        <button type="submit" class="btn btn-success mt-4 mb-2">Eliminar</button>
     </form>
 </div>

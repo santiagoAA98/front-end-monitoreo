@@ -42,5 +42,6 @@ export class EditarAdministradorComponent implements OnInit {
     };
 
     this.administradorService.actualizarInfoAdministrador(data);
+    alert('El administrador se actualizo con éxito');
   }
 }

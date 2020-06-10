@@ -48,45 +48,67 @@
             <input type="number" class="form-control" id="peso" formControlName="peso">
         </div>
         <div class="form-group">
-            <label for="talla_camisa">TALLA_CAMISA</label>
+            <label for="talla_camisa">TALLA CAMISA</label>
             <input type="number" class="form-control" id="talla_camisa" formControlName="talla_camisa">
         </div>
-
         <div class="form-group">
-            <label for="tipo_sangre">TIPO_SANGRE</label>
+            <label for="tipo_sangre">TIPO SANGRE</label>
             <input type="text" class="form-control" id="tipo_sangre" formControlName="tipo_sangre">
         </div>
         <div class="form-group">
             <label for="alergias">ALERGIAS</label>
             <textarea class="form-control" id="alergias" rows="2" formControlName="alergias"></textarea>
+            <small id="emailHelp" class="form-text text-muted">Digitar cada alergia separada por una coma.</small>
         </div>
         <div class="form-group">
             <label for="operaciones">OPERACIONES</label>
             <textarea class="form-control" id="operaciones" rows="2" formControlName="operaciones"></textarea>
+            <small id="emailHelp" class="form-text text-muted">Digitar cada operación separada por una coma.</small>
         </div>
         <div class="form-group">
-            <label for="lesiones_graves">LESIONES_GRAVES</label>
+            <label for="lesiones_graves">LESIONES GRAVES</label>
             <textarea class="form-control" id="lesiones_graves" rows="2" formControlName="lesiones_graves"></textarea>
+            <small id="emailHelp" class="form-text text-muted">Digitar cada lesión grave separada por una coma.</small>
         </div>
         <div class="form-group">
             <label for="fracturas">FRACTURAS</label>
             <textarea class="form-control" id="fracturas" rows="2" formControlName="fracturas"></textarea>
+            <small id="emailHelp" class="form-text text-muted">Digitar cada fractura separada por una coma.</small>
         </div>
         <div class="form-group">
-            <label for="sexo">SEXO</label>
-            <input type="text" class="form-control" id="sexo" formControlName="sexo">
+            <div class="form-group">
+                <label for="sexo">GENERO</label>
+                <select class="form-control" id="sexo" formControlName="sexo">
+                  <option value="masculino" >masculino</option>
+                  <option value="femenino" >femenino</option>
+                </select>
+            </div>
         </div>
         <div class="form-group">
             <label for="especialidades">ESPECIALIDADES</label>
             <textarea class="form-control" id="especialidades" rows="2" formControlName="especialidades"></textarea>
+            <small id="emailHelp" class="form-text text-muted">Digitar cada especialidad separada por una coma.</small>
         </div>
         <div class="form-group">
-            <label for="año_activo">AÑO_ACTIVO</label>
+            <label for="año_activo">AÑO ACTIVO</label>
             <input type="number" class="form-control" id="año_activo" formControlName="año_activo">
         </div>
         <div class="form-group">
             <label for="pruebas">PRUEBAS</label>
             <textarea class="form-control" id="pruebas" rows="2" formControlName="pruebas"></textarea>
+            <small id="emailHelp" class="form-text text-muted">Digitar cada prueba separada por una coma.</small>
+        </div>
+        <div class="form-group" *ngIf="perfilActual !== 'entrenador'">
+            <div class="form-group">
+                <label for="cedula_entrenador">ENTRENADOR</label>
+                <select class="form-control" id="cedula_entrenador" formControlName="cedula_entrenador">
+                    <option *ngFor="let cedula of cedulasEntrenador" [value]="cedula">cedula - {{ cedula }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group" *ngIf="perfilActual === 'entrenador'">
+            <label for="cedula_entrenador">ENTRENADOR</label>
+            <input type="text" class="form-control" formControlName="cedula_entrenador" [value]="cedulaEntrenador">
         </div>
         <button type="submit" class="btn btn-success mb-2">Crear</button>
     </form>

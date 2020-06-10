@@ -16,6 +16,7 @@ export class EntrenadorHomeComponent implements OnInit {
   entrenador: Entrenador;
   atletas: Atleta[] = [];
   atletaSeleccionado: Atleta;
+  perfil = 'entrenador';
 
   constructor(private auth: AuthService,
               private entrenadorService: EntrenadorDataService,

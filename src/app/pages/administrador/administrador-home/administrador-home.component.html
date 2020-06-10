@@ -36,10 +36,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-7 mt-5 opciones-funciones">
+        <div class="col-md-7  opciones-funciones">
             <div class="mb-3">
                 <span class="mr-5">
-                    <button type="button" class="btn btn-light opciones-funciones__boton">AGREGAR INFORME</button>
+                    <button type="button" class="btn btn-light opciones-funciones__boton">VER DISPOSITIVOS</button>
                 </span>
                 <span>
                     <button type="button" 
@@ -50,20 +50,35 @@
                 </span>
             </div>
 
+            <div class="mb-3">
+                <span class="mr-5">
+                    <button type="button" class="btn btn-light opciones-funciones__boton">AGREGAR DISPOSITIVOS</button>
+                </span>
+                <span>
+                    <button type="button" class="btn btn-light opciones-funciones__boton">GENERAR INFORME</button>
+                </span>
+            </div>
+
+            <div class="mb-3">
+                <span class="mr-5">
+                    <button type="button" class="btn btn-light opciones-funciones__boton">VER RENDIMIENTO</button>
+                </span>
+            </div>
+
 
             <div [ngSwitch]="tipoFormulario" id="opcion">
-                <app-editar-administrador *ngSwitchCase="'editarPerfil'" [administrador]="administrador"></app-editar-administrador>
+                <app-editar-administrador *ngSwitchCase="'editarPerfil'" 
+                                           [administrador]="administrador" 
+                                           (change)="recargarDatos()"></app-editar-administrador>
 
                 <app-crear-atleta *ngSwitchCase="'crearAtleta'" ></app-crear-atleta>
 
                 <app-crear-entrenador *ngSwitchCase="'crearEntrenador'" ></app-crear-entrenador>
 
-                <app-eliminar-atleta *ngSwitchCase="'eliminarAtleta'" ></app-eliminar-atleta>
+                <app-eliminar-atleta *ngSwitchCase="'eliminarAtleta'" (change)="administrarPerfilesEjecutado()" ></app-eliminar-atleta>
 
-                <app-eliminar-entrenador *ngSwitchCase="'eliminarEntrenador'" ></app-eliminar-entrenador>
-            </div>
-
-          
+                <app-eliminar-entrenador *ngSwitchCase="'eliminarEntrenador'" (change)="administrarPerfilesEjecutado()"></app-eliminar-entrenador>
+            </div>          
         </div>
     </div>
 </div>

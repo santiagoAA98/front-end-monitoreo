@@ -36,20 +36,26 @@ export class CrearEntrenadorComponent implements OnInit {
   }
 
   crearEntrenador() {
-    const data = {
-      usuario: this.myForm.controls.usuario.value,
-      clave: this.myForm.controls.clave.value,
-      cedula_entrenador: this.myForm.controls.cedula_entrenador.value,
-      nombre: this.myForm.controls.nombre.value,
-      apellidos: this.myForm.controls.apellidos.value,
-      telefono: this.myForm.controls.telefono.value,
-      correo: this.myForm.controls.correo.value,
-      lugar: this.myForm.controls.lugar.value,
-      hora: this.myForm.controls.hora.value,
-      dias: this.myForm.controls.dias.value
-    };
+    if (this.myForm.valid) {
+      const data = {
+        usuario: this.myForm.controls.usuario.value,
+        clave: this.myForm.controls.clave.value,
+        cedula_entrenador: this.myForm.controls.cedula_entrenador.value,
+        nombre: this.myForm.controls.nombre.value,
+        apellidos: this.myForm.controls.apellidos.value,
+        telefono: this.myForm.controls.telefono.value,
+        correo: this.myForm.controls.correo.value,
+        lugar: this.myForm.controls.lugar.value,
+        hora: this.myForm.controls.hora.value,
+        dias: this.myForm.controls.dias.value
+      };
 
-    this.entrenadorService.crearEntrenador(data);
+      this.entrenadorService.crearEntrenador(data);
+      this.myForm.reset();
+      alert('Entrenador agregado con exito');
+    } else {
+      alert('Completa todo el formulario para agregar un entrenador');
+    }
   }
 
 }

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit{
 
   sesionUsuario: Sesion;
+  sesionIncorrecta: boolean;
 
   constructor( private authService: AuthService,
                private router: Router) {}
@@ -22,6 +23,8 @@ export class LoginComponent implements OnInit{
 
   iniciarSesion(myForm: NgForm) {
     if (myForm.invalid) {
+      this.sesionIncorrecta = false;
+      alert('Ingresa un usuario y clave');
       return;
     } else {
       this.authService.iniciarSesion(this.sesionUsuario).subscribe(
@@ -40,6 +43,8 @@ export class LoginComponent implements OnInit{
           } else if (sesionInfo.rol === 'atleta') {
             this.router.navigateByUrl('/atleta');
           }
+      } else {
+        this.sesionIncorrecta = true;
       }
   }
 }

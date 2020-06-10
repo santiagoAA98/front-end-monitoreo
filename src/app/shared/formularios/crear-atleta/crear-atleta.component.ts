@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import { AtletaDataService } from 'src/app/core/services/atleta-data.service';
+import { EntrenadorDataService } from 'src/app/core/services/entrenador-data.service';
 
 @Component({
   selector: 'app-crear-atleta',
@@ -10,13 +11,29 @@ import { AtletaDataService } from 'src/app/core/services/atleta-data.service';
 })
 export class CrearAtletaComponent implements OnInit {
 
+  @Input()
+  perfilActual: string;
+
+  @Input()
+  cedulaEntrenador: any;
+
   myForm: FormGroup;
+  cedulasEntrenador: any[] = [];
 
   constructor(private formB: FormBuilder,
-              private atletaService: AtletaDataService) { }
+              private atletaService: AtletaDataService,
+              private entrenadorService: EntrenadorDataService) { }
 
   ngOnInit() {
+    this.consultarCedulasentrenador();
     this.crearformulario();
+
+    setTimeout(() => {
+      if (this.cedulaEntrenador) {
+        this.myForm.controls.cedula_entrenador.setValue(this.cedulaEntrenador);
+        this.myForm.get('cedula_entrenador').disable();
+      }
+    }, 1500);
   }
 
   crearformulario() {
@@ -41,10 +58,31 @@ export class CrearAtletaComponent implements OnInit {
       especialidades: ['', Validators.required],
       año_activo: [, Validators.required],
       pruebas: ['', Validators.required],
+      cedula_entrenador: [, Validators.required]
     });
   }
 
+  consultarCedulasentrenador() {
+    if(this.perfilActual !== 'entrenador') {
+      this.entrenadorService.getCedulas().subscribe( (resp: any) => {
+        this.cedulasEntrenador = resp;
+      });
+    }
+  }
+
   crearAtleta() {
+    if (this.myForm.valid) {
+      const data = this.llenarDatosAEnviar();
+      this.atletaService.crearAtleta(data);
+      this.myForm.reset();
+      alert('Atleta agregado con exito');
+    }  else {
+      alert('Completa todo el formulario para agregar un atleta');
+    }
+  }
+
+
+  llenarDatosAEnviar(): any {
     const data = {
       usuario: this.myForm.controls.usuario.value,
       clave: this.myForm.controls.clave.value,
@@ -66,9 +104,9 @@ export class CrearAtletaComponent implements OnInit {
       especialidades: this.myForm.controls.especialidades.value,
       año_activo: this.myForm.controls.año_activo.value,
       pruebas: this.myForm.controls.pruebas.value,
+      cedula_entrenador: this.myForm.controls.cedula_entrenador.value
     };
 
-
-    this.atletaService.crearAtleta(data);
+    return data;
   }
 }
