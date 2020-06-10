@@ -38,6 +38,7 @@ export class EntrenadorHomeComponent implements OnInit {
       for (const iterador of resp) {
         const atleta = new Atleta(iterador);
         this.atletas.push(atleta);
+        console.log(this.atletas);
       }
     });
   }

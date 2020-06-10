@@ -19,6 +19,14 @@ export class AtletaDataService {
 
     return this.http.post<Atleta>(`${this.url}controllerConsultarAtleta.php`, JSON.stringify(data));
   }
+  
+  getAtletaCedula(cedulaAtleta: any) {
+    const data = {
+      cedula : cedulaAtleta
+    };
+
+    return this.http.post<Atleta>(`${this.url}controllerConsultarAtletaPorCedula.php`, JSON.stringify(data));
+  }
 
   getAtletasEntrenador(cedula: number) {
       const data = {

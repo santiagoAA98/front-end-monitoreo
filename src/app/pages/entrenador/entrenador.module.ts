@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { EntrenadorRoutingModule } from './entrenador-routing.module';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { FormulariosModule } from 'src/app/shared/formularios/formularios.module';
+import { GraficasModule } from 'src/app/shared/graficas/graficas.module';
 
 import { EntrenadorHomeComponent } from './entrenador-home/entrenador-home.component';
 import { EntrenadorEventoComponent } from './entrenador-evento/entrenador-evento.component';
@@ -23,7 +24,8 @@ import { ListaAtletasComponent } from './lista-atletas/lista-atletas.component';
     EntrenadorRoutingModule,
     FormulariosModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    GraficasModule
   ]
 })
 export class EntrenadorModule { }

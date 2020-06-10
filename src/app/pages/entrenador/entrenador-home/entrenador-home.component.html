@@ -45,14 +45,17 @@
                 <span class="mr-5">
                     <button type="button" 
                             class="btn btn-light opciones-funciones__boton"
-                            [routerLink]="['../crear-evento', entrenador?.cedulaEntrenador, entrenador?.nombre ]">
+                            [routerLink]="['../crear-evento', entrenador?.cedulaEntrenador]">
                             CREAR EVENTO
                     </button>                    
                 </span>
                 <span>
                     <button type="button" 
                             class="btn btn-light opciones-funciones__boton"
-                            [routerLink]="['../observar-atleta']">
+                            [routerLink]="['../observar-atleta', 
+                                            this.atletaSeleccionado?.cedulaAtleta, 
+                                            this.entrenador?.cedulaEntrenador,
+                                            this.entrenador?.nombre]">
                             OBSERVAR ATLETAS
                     </button>
                 </span>
@@ -86,7 +89,11 @@
             <div [ngSwitch]="tipoFormulario">
                 <app-editar-entrenador *ngSwitchCase="'editarEntrenador'" 
                                         [entrenador]="entrenador"></app-editar-entrenador>
-                <app-crear-atleta *ngSwitchCase="'crear'" [perfilActual]="perfil" [cedulaEntrenador]="entrenador.cedulaEntrenador" ></app-crear-atleta>
+
+                <app-crear-atleta *ngSwitchCase="'crear'" 
+                                    [perfilActual]="perfil" 
+                                    [cedulaEntrenador]="entrenador.cedulaEntrenador" ></app-crear-atleta>
+
                 <app-editar-atleta *ngSwitchCase="'editarAtleta'" 
                                     [atleta]="atletaSeleccionado"></app-editar-atleta>
             </div>
