@@ -84,9 +84,11 @@
 
 
             <div [ngSwitch]="tipoFormulario">
-                <app-editar-entrenador *ngSwitchCase="'editarEntrenador'" [entrenador]="entrenador" ></app-editar-entrenador>
+                <app-editar-entrenador *ngSwitchCase="'editarEntrenador'" 
+                                        [entrenador]="entrenador"></app-editar-entrenador>
                 <app-crear-atleta *ngSwitchCase="'crear'" [perfilActual]="perfil" [cedulaEntrenador]="entrenador.cedulaEntrenador" ></app-crear-atleta>
-                <app-editar-atleta *ngSwitchCase="'editarAtleta'" [atleta]="atletaSeleccionado"></app-editar-atleta>
+                <app-editar-atleta *ngSwitchCase="'editarAtleta'" 
+                                    [atleta]="atletaSeleccionado"></app-editar-atleta>
             </div>
 
 

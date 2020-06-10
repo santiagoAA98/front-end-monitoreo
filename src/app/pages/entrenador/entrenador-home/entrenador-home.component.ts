@@ -57,6 +57,9 @@ export class EntrenadorHomeComponent implements OnInit {
       };
 
       this.atletaService.eliminarAtleta(data);
+      this.atletas = [];
+      alert('Atleta eliminado');
+      this.consultarMisAtletas();
     } else {
       alert('Selecciona primero un atleta para eliminar');
     }
@@ -65,7 +68,6 @@ export class EntrenadorHomeComponent implements OnInit {
   obtenerAtletaSeleccionado(cedula: any) {
     const busquedaAtleta = this.atletas.filter( atleta => atleta.cedulaAtleta === cedula );
     this.atletaSeleccionado = busquedaAtleta[0];
-
   }
 
   cerrarSesion() {

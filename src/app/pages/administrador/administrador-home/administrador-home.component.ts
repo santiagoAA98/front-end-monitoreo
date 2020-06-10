@@ -26,19 +26,6 @@ export class AdministradorHomeComponent implements OnInit {
       });
   }
 
-  recargarDatos() {
-    setTimeout(() => {
-      this.consultarAdministrador();
-      this.tipoFormulario = 'ninguno';
-    }, 1500);
-  }
-
-  administrarPerfilesEjecutado() {
-    setTimeout(() => {
-      this.tipoFormulario = 'ninguno';
-    }, 1500);
-  }
-
   cerrarSesion() {
     this.auth.cerrarSesion();
   }

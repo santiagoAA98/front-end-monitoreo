@@ -41,8 +41,9 @@ export class EditarEntrenadorComponent implements OnInit {
       correo: this.myForm.controls.correo.value
     };
 
-    console.log(data);
     this.entrenadorService.actualizarEntrenador(data);
+    alert('El entrenador se actualizo con éxito');
+    window.location.reload();
   }
 
 }

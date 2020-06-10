@@ -72,6 +72,8 @@ export class EditarAtletaComponent implements OnInit, OnChanges {
     };
 
     this.atletaService.actualizarAtleta(data);
+    alert('El atleta se actualizo con éxito');
+    window.location.reload();
   }
 
 }

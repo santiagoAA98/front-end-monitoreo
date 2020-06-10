@@ -69,15 +69,15 @@
             <div [ngSwitch]="tipoFormulario" id="opcion">
                 <app-editar-administrador *ngSwitchCase="'editarPerfil'" 
                                            [administrador]="administrador" 
-                                           (change)="recargarDatos()"></app-editar-administrador>
+                                           ></app-editar-administrador>
 
                 <app-crear-atleta *ngSwitchCase="'crearAtleta'" ></app-crear-atleta>
 
                 <app-crear-entrenador *ngSwitchCase="'crearEntrenador'" ></app-crear-entrenador>
 
-                <app-eliminar-atleta *ngSwitchCase="'eliminarAtleta'" (change)="administrarPerfilesEjecutado()" ></app-eliminar-atleta>
+                <app-eliminar-atleta *ngSwitchCase="'eliminarAtleta'"></app-eliminar-atleta>
 
-                <app-eliminar-entrenador *ngSwitchCase="'eliminarEntrenador'" (change)="administrarPerfilesEjecutado()"></app-eliminar-entrenador>
+                <app-eliminar-entrenador *ngSwitchCase="'eliminarEntrenador'"></app-eliminar-entrenador>
             </div>          
         </div>
     </div>

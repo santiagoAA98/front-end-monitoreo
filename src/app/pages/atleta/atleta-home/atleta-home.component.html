@@ -56,7 +56,8 @@
         </div>
 
         <div [ngSwitch]="tipoFormulario">
-            <app-editar-atleta [atleta]="atleta" *ngSwitchCase="'editar'" ></app-editar-atleta>
+            <app-editar-atleta [atleta]="atleta" 
+                               *ngSwitchCase="'editar'"></app-editar-atleta>
             <app-registrar-marca [cedulaAtleta]="atleta.cedulaAtleta" *ngSwitchCase="'marca'"></app-registrar-marca>
         </div>
     </div>
