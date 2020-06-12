@@ -55,7 +55,8 @@
                     <button type="button" class="btn btn-light opciones-funciones__boton">AGREGAR DISPOSITIVOS</button>
                 </span>
                 <span>
-                    <button type="button" class="btn btn-light opciones-funciones__boton">GENERAR INFORME</button>
+                    <button type="button" class="btn btn-light opciones-funciones__boton" (click)="tipoFormulario='informeGeneral'"
+                    (click)="obtenerInforme()">GENERAR INFORME</button>
                 </span>
             </div>
 
@@ -68,8 +69,7 @@
 
             <div [ngSwitch]="tipoFormulario" id="opcion">
                 <app-editar-administrador *ngSwitchCase="'editarPerfil'" 
-                                           [administrador]="administrador" 
-                                           ></app-editar-administrador>
+                                           [administrador]="administrador"></app-editar-administrador>
 
                 <app-crear-atleta *ngSwitchCase="'crearAtleta'" ></app-crear-atleta>
 
@@ -78,6 +78,9 @@
                 <app-eliminar-atleta *ngSwitchCase="'eliminarAtleta'"></app-eliminar-atleta>
 
                 <app-eliminar-entrenador *ngSwitchCase="'eliminarEntrenador'"></app-eliminar-entrenador>
+
+                <app-informe-general *ngSwitchCase="'informeGeneral'"
+                                     [informe]="informe"></app-informe-general>
             </div>          
         </div>
     </div>

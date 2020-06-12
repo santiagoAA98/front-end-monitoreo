@@ -4,6 +4,7 @@ import { EntrenadorDataService } from 'src/app/core/services/entrenador-data.ser
 import { AtletaDataService } from 'src/app/core/services/atleta-data.service';
 import { Entrenador } from 'src/app/core/models/entrenador.model';
 import { Atleta } from 'src/app/core/models/atleta.model';
+import { InformeService } from 'src/app/core/services/informe.service';
 
 @Component({
   selector: 'app-entrenador-home',
@@ -17,10 +18,12 @@ export class EntrenadorHomeComponent implements OnInit {
   atletas: Atleta[] = [];
   atletaSeleccionado: Atleta;
   perfil = 'entrenador';
+  informe = {};
 
   constructor(private auth: AuthService,
               private entrenadorService: EntrenadorDataService,
-              private atletaService: AtletaDataService) { }
+              private atletaService: AtletaDataService,
+              private informeService: InformeService) { }
 
   ngOnInit() {
     this.consultarEntrenador();
@@ -69,6 +72,13 @@ export class EntrenadorHomeComponent implements OnInit {
   obtenerAtletaSeleccionado(cedula: any) {
     const busquedaAtleta = this.atletas.filter( atleta => atleta.cedulaAtleta === cedula );
     this.atletaSeleccionado = busquedaAtleta[0];
+  }
+
+  obtenerInforme() {
+    this.informeService.generarInformeEntranador(this.entrenador.cedulaEntrenador).subscribe((resp: any) => {
+      console.log(resp);
+      this.informe = resp;
+    });
   }
 
   cerrarSesion() {

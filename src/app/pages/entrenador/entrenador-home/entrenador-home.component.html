@@ -62,10 +62,11 @@
             </div>
             <div class="mb-3">
                 <span class="mr-5">
-                    <button type="button" class="btn btn-light opciones-funciones__boton">VER RENDIMIENTO</button>
+                    <button type="button" class="btn btn-light opciones-funciones__boton">CONECTAR DISPOSITIVOS</button>
                 </span>
                 <span>
-                    <button type="button" class="btn btn-light opciones-funciones__boton">GENERAR INFORME</button>
+                    <button type="button" class="btn btn-light opciones-funciones__boton" (click)="tipoFormulario='informeGeneral'"
+                    (click)="obtenerInforme()">GENERAR INFORME</button>
                 </span>
             </div>
             <div class="mb-3">
@@ -80,9 +81,6 @@
                 <span class="mr-5">
                     <button type="button" class="btn btn-light opciones-funciones__boton" (click)="eliminarAtleta()">ELIMINAR ATLETA</button>
                 </span>
-                <span>
-                    <button type="button" class="btn btn-light opciones-funciones__boton">CONECTAR DISPOSITIVOS</button>
-                </span>
             </div>
 
 
@@ -96,6 +94,9 @@
 
                 <app-editar-atleta *ngSwitchCase="'editarAtleta'" 
                                     [atleta]="atletaSeleccionado"></app-editar-atleta>
+
+                <app-informe-entrenador *ngSwitchCase= "'informeGeneral'"
+                                        [informe]="informe"></app-informe-entrenador>
             </div>
 
 

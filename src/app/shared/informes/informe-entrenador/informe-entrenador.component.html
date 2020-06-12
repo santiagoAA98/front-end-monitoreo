@@ -1,0 +1,22 @@
+<div class="container-fluid wrapp-contenido">
+    <div class="contenido-informe">
+        <div class="wrapp-titulo">
+            <h2 class="titulo-informe mt-4">INFORME GENERAL</h2>
+        </div>
+        <p>
+            Monitoreo atletas <br><br>
+            Con el presente informe, se comunica la cifras de eventos que ha programado
+            el entrenador (nombre) en su historial  <br><br>
+            El numero de eventos totales que se han programado es de {{ informe?.totalEventos }}, de los cuales
+            {{ informe?.numeroEventosAnio }} eventos han sido del actual año<br><br>
+            Donde se destaca que la mejor marca obtenida por uno de sus atletas fue un tiempo de {{ informe?.mejorMarca?.marca }} 
+            por {{ informe?.mejorMarca?.nombre }}. Ademas se informa que el promedio de resultados de atletas a su mando
+            en todo el historial es de {{ informe?.promedioMarcas }}.<br><br>
+            Por ultimo, la cantidad de atletas activos al mando del entrenador (nombre)
+            es de {{ informe?.numeroAtletas }}.
+        </p>
+        <div class="fecha-informe">
+            <span>Medellin, fecha</span>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,8 @@
  <div class="container-fluid mt-3">
     <div class="botones-navegacion">
         <button type="button"
-                class="btn btn-danger botones-navegacion__boton">
+                class="btn btn-danger botones-navegacion__boton"
+                (click)="tipoFormulario='ninguno'">
                 ATRAS
         </button>
         <button type="button"
@@ -52,7 +53,8 @@
                             [routerLink]="['../mi-rendimiento', this.atleta?.cedulaAtleta]">VER RENDIMIENTO</button>
                 </span>
                 <span>
-                    <button type="button" class="btn btn-light opciones-funciones__boton">GENERAR INFORME</button>
+                    <button type="button" class="btn btn-light opciones-funciones__boton" (click)="tipoFormulario='informeGeneral'" 
+                    (click)="obtenerInforme()">GENERAR INFORME</button>
                 </span>
             </div>
         </div>
@@ -60,7 +62,13 @@
         <div [ngSwitch]="tipoFormulario">
             <app-editar-atleta [atleta]="atleta" 
                                *ngSwitchCase="'editar'"></app-editar-atleta>
-            <app-registrar-marca [cedulaAtleta]="atleta.cedulaAtleta" *ngSwitchCase="'marca'"></app-registrar-marca>
+
+            <app-registrar-marca [cedulaAtleta]="atleta.cedulaAtleta" 
+                                 *ngSwitchCase="'marca'"></app-registrar-marca>
+
+            <app-informe-atleta *ngSwitchCase="'informeGeneral'" 
+                                [informe]="informe"
+                                class="m-5"></app-informe-atleta>
         </div>
     </div>
 

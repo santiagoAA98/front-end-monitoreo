@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FormulariosModule } from 'src/app/shared/formularios/formularios.module';
+import { InformesModule } from 'src/app/shared/informes/informes.module';
+
 import { AdministradorRoutingModule } from './administrador-routing.module';
 import { AdministradorHomeComponent } from './administrador-home/administrador-home.component';
-
-
-import { FormulariosModule } from 'src/app/shared/formularios/formularios.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,8 @@ import { FormulariosModule } from 'src/app/shared/formularios/formularios.module
   imports: [
     CommonModule,
     AdministradorRoutingModule,
-    FormulariosModule
+    FormulariosModule,
+    InformesModule
   ]
 })
 export class AdministradorModule { }

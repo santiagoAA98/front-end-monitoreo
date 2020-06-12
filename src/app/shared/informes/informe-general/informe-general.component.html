@@ -1,0 +1,22 @@
+<div class="container-fluid wrapp-contenido">
+    <div class="contenido-informe">
+        <div class="wrapp-titulo">
+            <h2 class="titulo-informe mt-4">INFORME GENERAL</h2>
+        </div>
+        <p>
+            Monitoreo atletas <br><br>
+            Con el presente informe, se comunica la cifras que se presentaron
+            en los eventos en el actual año 2020 <br><br>
+            El numero de eventos totales que se han programado es de {{ informe?.totalEventos }}, de los cuales
+            {{ informe?.numeroEventosAnio }} eventos se programaron en el actual año 2020 <br><br>
+            Donde se destaca que la mejor marca obtenida en todo el año, fue un tiempo de {{ informe?.mejorMarca?.marca }}
+            obtenida por el atleta {{ informe?.mejorMarca?.nombreAtleta }}. ademas se informa que el promedio de resultados 
+            en todo el año fue de {{ informe?.promedioMarcas }}.<br><br>
+            Por ultimo, la cantidad de atletas activos en la plataforma es de {{ informe?.numeroAtletas }} y el numero
+            de entrenadores disponibles es de {{ informe?.numeroEntrenadores }}.
+        </p>
+        <div class="fecha-informe">
+            <span>Medellin, fecha</span>
+        </div>
+    </div>
+</div>
