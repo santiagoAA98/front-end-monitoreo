@@ -5,6 +5,7 @@ import { AtletaDataService } from 'src/app/core/services/atleta-data.service';
 import { Entrenador } from 'src/app/core/models/entrenador.model';
 import { Atleta } from 'src/app/core/models/atleta.model';
 import { InformeService } from 'src/app/core/services/informe.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-entrenador-home',
@@ -23,7 +24,8 @@ export class EntrenadorHomeComponent implements OnInit {
   constructor(private auth: AuthService,
               private entrenadorService: EntrenadorDataService,
               private atletaService: AtletaDataService,
-              private informeService: InformeService) { }
+              private informeService: InformeService,
+              private router: Router) { }
 
   ngOnInit() {
     this.consultarEntrenador();
@@ -79,6 +81,15 @@ export class EntrenadorHomeComponent implements OnInit {
       console.log(resp);
       this.informe = resp;
     });
+  }
+
+  observarAtleta() {
+    if (this.atletaSeleccionado) {
+      this.router.navigate(['entrenador/observar-atleta', this.atletaSeleccionado.cedulaAtleta, 
+                      this.entrenador.cedulaEntrenador, this.entrenador.nombre]);
+    } else {
+      alert('Selecciona un atleta para observar');
+    }
   }
 
   cerrarSesion() {

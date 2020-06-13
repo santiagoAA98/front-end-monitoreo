@@ -36,6 +36,10 @@
                 DE DEPORTES DEL POLITECNICO <br>
                 JAIME ISAZA CADAVID
             </p>
+
+            <div class="content__wrapp-img">
+                <img src="../../../../assets/img/escudo-politecnico-jic.jpg" class="content__img" alt="">
+            </div>
         </div>
         <div class="col-md-7 opciones-funciones">
             <div class="mb-3">
@@ -57,22 +61,19 @@
                     (click)="obtenerInforme()">GENERAR INFORME</button>
                 </span>
             </div>
+
+            <div [ngSwitch]="tipoFormulario">
+                <app-editar-atleta [atleta]="atleta" 
+                                   *ngSwitchCase="'editar'"></app-editar-atleta>
+    
+                <app-registrar-marca [cedulaAtleta]="atleta.cedulaAtleta" 
+                                     *ngSwitchCase="'marca'"></app-registrar-marca>
+    
+                <app-informe-atleta *ngSwitchCase="'informeGeneral'" 
+                                    [informe]="informe"
+                                    [nombreAtleta]="atleta.nombreCompleto"
+                                    class="m-5"></app-informe-atleta>
+            </div>
         </div>
-
-        <div [ngSwitch]="tipoFormulario">
-            <app-editar-atleta [atleta]="atleta" 
-                               *ngSwitchCase="'editar'"></app-editar-atleta>
-
-            <app-registrar-marca [cedulaAtleta]="atleta.cedulaAtleta" 
-                                 *ngSwitchCase="'marca'"></app-registrar-marca>
-
-            <app-informe-atleta *ngSwitchCase="'informeGeneral'" 
-                                [informe]="informe"
-                                class="m-5"></app-informe-atleta>
-        </div>
-    </div>
-
-    <div class="content__wrapp-img">
-        <img src="../../../../assets/img/escudo-politecnico-jic.jpg" class="content__img" alt="">
     </div>
  </div>

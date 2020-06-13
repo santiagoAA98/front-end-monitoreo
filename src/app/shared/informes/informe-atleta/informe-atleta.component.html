@@ -5,17 +5,17 @@
         </div>
         <p> 
             <br><br>
-            Monitoreo atletas <br><br>
-            Con el presente informe, se comunica la cifras que presento el atleta (nombre)
-            en todos los eventos que se le relaciona<br><br>
-            El atleta se programo en {{ informe?.totalEventos }} eventos de los cuales
-            {{ informe?.eventosRealizados }} ha desarrollado, quedadon asi, {{ informe?.eventosNoRealizados }} eventos faltantes 
+            Monitoreo de atletas <br><br>
+            Con el presente informe se comunica las cifras que presento el atleta {{ nombreAtleta }}
+            en todos los eventos que se registro<br><br>
+            El atleta se registro en {{ informe?.totalEventos }} eventos de los cuales
+            {{ informe?.eventosRealizados }} ha participado, quedando así, {{ informe?.eventosNoRealizados }} eventos faltantes 
             programados por desarrollar.<br><br>
-            Se destaca que su mejor marca obtenida fue un tiempo de{{ informe?.mejorMarca }},
-            ademas se informa que tiene un promedio de {{ informe?.pormedioMarcas }} en todo su historial.<br><br>
+            Se destaca que su mejor marca obtenida fue un tiempo de {{ informe?.mejorMarca }},
+            además se informa de que tiene un promedio de {{ informe?.pormedioMarcas }} en todos los eventos que participo.<br><br>
         </p>
         <div class="fecha-informe">
-            <span>Medellin, fecha</span>
+            <span>Medellín, {{ hoy }}</span>
         </div>
     </div>
 </div>

@@ -1,4 +1,9 @@
 
+.wrapp-titulo {
+    margin-top: 10px;
+    text-align: center;
+}
+
 .titulo-informe {
     font-size: 20px;
     color: red;

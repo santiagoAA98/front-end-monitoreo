@@ -52,10 +52,7 @@
                 <span>
                     <button type="button" 
                             class="btn btn-light opciones-funciones__boton"
-                            [routerLink]="['../observar-atleta', 
-                                            this.atletaSeleccionado?.cedulaAtleta, 
-                                            this.entrenador?.cedulaEntrenador,
-                                            this.entrenador?.nombre]">
+                            (click)="observarAtleta()">
                             OBSERVAR ATLETAS
                     </button>
                 </span>
@@ -65,8 +62,10 @@
                     <button type="button" class="btn btn-light opciones-funciones__boton">CONECTAR DISPOSITIVOS</button>
                 </span>
                 <span>
-                    <button type="button" class="btn btn-light opciones-funciones__boton" (click)="tipoFormulario='informeGeneral'"
-                    (click)="obtenerInforme()">GENERAR INFORME</button>
+                    <button type="button" 
+                            class="btn btn-light opciones-funciones__boton" 
+                            (click)="tipoFormulario='informeGeneral'"
+                            (click)="obtenerInforme()">GENERAR INFORME</button>
                 </span>
             </div>
             <div class="mb-3">
@@ -96,7 +95,8 @@
                                     [atleta]="atletaSeleccionado"></app-editar-atleta>
 
                 <app-informe-entrenador *ngSwitchCase= "'informeGeneral'"
-                                        [informe]="informe"></app-informe-entrenador>
+                                        [informe]="informe"
+                                        [nombreEntrenador]="entrenador.nombreCompleto"></app-informe-entrenador>
             </div>
 
 
@@ -106,3 +106,9 @@
         </div>
     </div>
 </div>
+
+
+<!-- [routerLink]="['../observar-atleta', 
+                                            this.atletaSeleccionado?.cedulaAtleta, 
+                                            this.entrenador?.cedulaEntrenador,
+                                            this.entrenador?.nombre]" -->
